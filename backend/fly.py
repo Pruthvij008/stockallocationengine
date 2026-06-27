@@ -345,5 +345,11 @@ def get_meta():
         return jsonify({"error": str(exc)}), 500
 
 
+# ML walk-forward backtest lives in its own module; register its routes here.
+from ml_backtest import backtest_bp  # noqa: E402  (after helpers are defined)
+
+app.register_blueprint(backtest_bp)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
