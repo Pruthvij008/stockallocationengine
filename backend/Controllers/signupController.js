@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const signupController = async (req, res) => {
     try {
         const { username, password, age, emailId } = req.body;
-        console.log(username, password, age, emailId);
 
         if (!emailId || !password || !username) {
             return res.status(400).json({
@@ -15,7 +14,6 @@ const signupController = async (req, res) => {
         }
 
         const existingUser = await userModel.findOne({ emailId });
-        console.log("User found: " + existingUser);
 
         if (existingUser) {
             return res.status(409).json({

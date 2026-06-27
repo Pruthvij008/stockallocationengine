@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../api";
 
 export const Login = () => {
   const Navigate = useNavigate();
@@ -20,33 +21,43 @@ export const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  const submitHandler = async () => {
-    const response = await axios.post(
-      "http://localhost:8080/api/authlogin",
-      loginData
-    );
 
-    if (response.success == true) {
-      Navigate("/");
-    } else {
+  const submitHandler = async () => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/api/auth/login`,
+        loginData,
+        { withCredentials: true }
+      );
+
+      if (response.data.success === true) {
+        Navigate("/");
+      } else {
+        setIsvalid(false);
+      }
+    } catch (err) {
+      console.log("An error occurred while logging in");
       setIsvalid(false);
     }
   };
+
   return (
     <div className=" flex justify-center items-center h-screen">
       <div className="bg-gray-200 p-8 rounded-md">
-        <div class="font-bold text-3xl my-6 text-center text-black hover:text-green-700 transition duration-300 transform hover:scale-105">
+        <div className="font-bold text-3xl my-6 text-center text-black hover:text-green-700 transition duration-300 transform hover:scale-105">
           {" "}
           Login
         </div>
 
         <div className="username mb-4">
           <label htmlFor="emailId" className="font-bold block mb-2">
-            Username:
+            Email or Username:
           </label>
           <input
             type="text"
-            name="userName"
+            name="emailId"
+            value={loginData.emailId}
+            onChange={onChangeHandler}
             className="h-10 w-96 border border-black rounded-md text-center glassmorphism-container placeholder-black"
             placeholder="Enter your email id"
           />
@@ -62,6 +73,8 @@ export const Login = () => {
           <input
             type={isVisible ? "text" : "password"}
             name="password"
+            value={loginData.password}
+            onChange={onChangeHandler}
             className="h-10 w-96 border border-black rounded-md text-center glassmorphism-container placeholder-black"
             placeholder="Enter password"
           />

@@ -1,0 +1,3 @@
+// Central place for the backend base URL.
+// Override in development/production via a .env file: VITE_API_URL=...
+export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
