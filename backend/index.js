@@ -1,44 +1,31 @@
 const express = require("express");
 const app = express();
-const dbConnect = require('./Config/database');
-require('dotenv').config();
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+require("dotenv").config();
+const cors = require("cors");
 
 // Middlewares
 app.use(express.json());
-app.use(cookieParser());
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Access-Control-Allow-Origin",
-    "Access-Control-Allow-Credentials"
-  ],
-  optionsSuccessStatus: 200
-}));
-
-// Database connection
-dbConnect();
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+    optionsSuccessStatus: 200,
+  })
+);
 
 // Routes
-const authRoutes = require('./Routes/authentication.route');
-const portfolioRoutes = require('./Routes/portfolio.route');
-
-app.use('/api/auth', authRoutes); // Prefix API routes
-app.use('/api/portfolio', portfolioRoutes); // Prefix API routes
+const portfolioRoutes = require("./Routes/portfolio.route");
+app.use("/api/portfolio", portfolioRoutes);
 
 // Home Route
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     success: true,
     data: "Welcome to the home page",
-    message: "This is the home page"
+    message: "This is the home page",
   });
 });
 
