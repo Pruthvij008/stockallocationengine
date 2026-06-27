@@ -59,9 +59,10 @@ def predict():
         # Calculate annualized return, risk, and Sharpe ratio for each stock
         stock_metrics = []
         from fredapi import Fred
+        import os
 
-        # Replace 'YOUR_API_KEY' with your actual FRED API key
-        fred = Fred(api_key='b73f7a1a09f317efceeec4829a0301c1')
+        # Provide your FRED API key via the FRED_API_KEY environment variable.
+        fred = Fred(api_key=os.environ.get('FRED_API_KEY'))
 
         try:
             # Retrieve the data for the 10-Year Treasury Constant Maturity Rate
