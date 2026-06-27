@@ -6,7 +6,6 @@ require("dotenv").config();
 const loginController = async (req, res) => {
   try {
     const { emailId, username, password } = req.body;
-    console.log(username, emailId, password);
 
     if (!password || (!username && !emailId)) {
       return res.status(400).json({
@@ -17,7 +16,6 @@ const loginController = async (req, res) => {
     }
 
     const user = await userModel.findOne({ $or: [{ emailId }, { username }] });
-    console.log("User found:", user);
 
     if (!user) {
       return res.status(404).json({

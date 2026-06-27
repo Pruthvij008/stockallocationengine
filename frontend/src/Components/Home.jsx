@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import stockPrediction from "./stockprediction.jpeg";
 const Home = () => {
   const Navigate = useNavigate();
   console.log("this page has been called");
@@ -8,7 +9,7 @@ const Home = () => {
       <Navbar />
       <main className="flex items-center justify-center p-8">
         <img
-          src={require("../Components/stockprediction.jpeg")}
+          src={stockPrediction}
           alt="Main visual"
           className="w-1/2 rounded-lg shadow-lg"
         />

@@ -5,15 +5,16 @@ import Home from "./Components/Home";
 import { Login } from "./Components/Login";
 import Prediction from "./Components/Prediction";
 import Performance from "./Components/Performance";
+
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/prediction" element={<Prediction />}></Route>
-        <Route path="/performance" element={<Performance />}></Route>
+        <Route path="/prediction" element={<Prediction />} />
+        <Route path="/performance" element={<Performance />} />
       </Routes>
     </div>
   );
