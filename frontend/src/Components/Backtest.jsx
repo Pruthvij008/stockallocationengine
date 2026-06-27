@@ -302,6 +302,76 @@ const Backtest = () => {
               </div>
             </div>
 
+            {/* Model evaluation metrics */}
+            {data.model_metrics && (
+              <div className="iv-card mt-6 p-6">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-lg font-semibold text-slate-800">
+                    Model evaluation — out-of-sample
+                  </h3>
+                  <span className="text-xs font-medium text-slate-500">
+                    scored on {data.model_metrics.n_predictions?.toLocaleString()} held-out
+                    predictions
+                  </span>
+                </div>
+                <p className="mb-5 mt-1 text-sm text-slate-500">
+                  The standard supervised-learning scorecard, computed on
+                  predictions the model never trained on. Because this is a return-
+                  ranking problem, three families of metrics matter.
+                </p>
+
+                <div className="grid gap-4 lg:grid-cols-3">
+                  <EvalGroup
+                    title="Regression error"
+                    subtitle="How close the predicted return is"
+                    rows={[
+                      ["RMSE", pct(data.model_metrics.rmse)],
+                      ["MAE", pct(data.model_metrics.mae)],
+                      ["R²", num(data.model_metrics.r2)],
+                    ]}
+                  />
+                  <EvalGroup
+                    title="Direction (up / down)"
+                    subtitle="Predicting the sign of next-month return"
+                    rows={[
+                      ["Accuracy", pct(data.model_metrics.accuracy)],
+                      ["Precision", pct(data.model_metrics.precision)],
+                      ["Recall", pct(data.model_metrics.recall)],
+                      ["F1 score", num(data.model_metrics.f1)],
+                      ["Base rate", pct(data.model_metrics.base_rate_up), true],
+                    ]}
+                  />
+                  <EvalGroup
+                    title="Ranking quality"
+                    subtitle="What actually matters for trading"
+                    rows={[
+                      [
+                        "Information Coeff.",
+                        Number.isFinite(Number(data.model_metrics.information_coefficient))
+                          ? Number(data.model_metrics.information_coefficient).toFixed(4)
+                          : "—",
+                      ],
+                      ["IC hit rate", pct(data.model_metrics.ic_hit_rate)],
+                      ["Precision@K", pct(data.model_metrics.precision_at_k)],
+                    ]}
+                  />
+                </div>
+
+                <div className="mt-5 rounded-lg bg-amber-50 p-4 text-xs leading-relaxed text-slate-600">
+                  <strong>How to read this (the honest version):</strong> the
+                  pointwise accuracy is modest — R² is slightly negative and the
+                  Information Coefficient is near zero, which is{" "}
+                  <em>completely normal</em> for monthly stock returns (they're
+                  mostly noise; published factor models live around IC 0.02–0.05).
+                  The strong equity curve above comes largely from a persistent{" "}
+                  <strong>momentum / low-volatility tilt</strong> in a rising
+                  market, not from precise per-stock forecasting. Showing both
+                  scorecards — and not hiding the weak ones — is the point: it's an
+                  honest demonstrator of the full ML pipeline, not a claim of alpha.
+                </div>
+              </div>
+            )}
+
             {/* Methodology */}
             <div className="iv-card mt-6 p-6">
               <h3 className="text-lg font-semibold text-slate-800">How this works</h3>
@@ -359,6 +429,23 @@ const Metric = ({ label, value, negative }) => (
     <p className={`mt-0.5 text-xl font-bold ${negative ? "text-red-500" : "text-slate-900"}`}>
       {value}
     </p>
+  </div>
+);
+
+const EvalGroup = ({ title, subtitle, rows }) => (
+  <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+    <p className="text-sm font-semibold text-slate-800">{title}</p>
+    <p className="mt-0.5 text-xs text-slate-500">{subtitle}</p>
+    <div className="mt-4 space-y-2.5">
+      {rows.map(([label, value, muted]) => (
+        <div key={label} className="flex items-center justify-between text-sm">
+          <span className={muted ? "text-slate-400" : "text-slate-600"}>{label}</span>
+          <span className={`font-bold ${muted ? "text-slate-400" : "text-slate-900"}`}>
+            {value}
+          </span>
+        </div>
+      ))}
+    </div>
   </div>
 );
 

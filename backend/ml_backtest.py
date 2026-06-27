@@ -130,6 +130,64 @@ def _metrics(period_rets, risk_free_rate):
     }
 
 
+def _model_eval_metrics(y_true, y_pred, ic_list, precision_at_k_list):
+    """Standard supervised-learning scorecard on the pooled out-of-sample
+    predictions — the metrics an interviewer expects to see.
+
+    Three families, because this is a return-ranking problem:
+      * Regression: RMSE / MAE / R² — how close the predicted return is.
+      * Classification (up vs down): accuracy / precision / recall / F1 —
+        treating "model predicts a positive return" as the positive class.
+      * Ranking: Information Coefficient (per-period rank correlation between
+        prediction and outcome) and precision@K — the metrics quants live by,
+        since for trading the *ordering* matters far more than the exact value.
+    """
+    yt = np.asarray(y_true, dtype=float)
+    yp = np.asarray(y_pred, dtype=float)
+    n = len(yt)
+    if n == 0:
+        return {}
+
+    # Regression error.
+    errors = yt - yp
+    rmse = float(np.sqrt(np.mean(errors ** 2)))
+    mae = float(np.mean(np.abs(errors)))
+    ss_res = float(np.sum(errors ** 2))
+    ss_tot = float(np.sum((yt - yt.mean()) ** 2))
+    r2 = float(1 - ss_res / ss_tot) if ss_tot > 0 else 0.0
+
+    # Up/down classification — positive class = predicted return > 0.
+    pred_up, actual_up = yp > 0, yt > 0
+    tp = int(np.sum(pred_up & actual_up))
+    fp = int(np.sum(pred_up & ~actual_up))
+    fn = int(np.sum(~pred_up & actual_up))
+    tn = int(np.sum(~pred_up & ~actual_up))
+    accuracy = (tp + tn) / n
+    precision = tp / (tp + fp) if (tp + fp) else 0.0
+    recall = tp / (tp + fn) if (tp + fn) else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+    base_rate = float(np.mean(actual_up))  # naive "always predict up" accuracy
+
+    ic_mean = float(np.mean(ic_list)) if ic_list else 0.0
+    ic_hit = float(np.mean([1.0 if x > 0 else 0.0 for x in ic_list])) if ic_list else 0.0
+    precision_at_k = float(np.mean(precision_at_k_list)) if precision_at_k_list else 0.0
+
+    return {
+        "n_predictions": n,
+        "rmse": rmse,
+        "mae": mae,
+        "r2": r2,
+        "accuracy": float(accuracy),
+        "precision": float(precision),
+        "recall": float(recall),
+        "f1": float(f1),
+        "base_rate_up": base_rate,
+        "information_coefficient": ic_mean,
+        "ic_hit_rate": ic_hit,
+        "precision_at_k": precision_at_k,
+    }
+
+
 def _run_backtest(top_k=10, model_name="gbr"):
     # Lazy import to avoid a circular import with fly.py.
     from fly import get_price_data, _fetch_index_returns, RISK_FREE_RATE
@@ -152,6 +210,10 @@ def _run_backtest(top_k=10, model_name="gbr"):
     last_model = None
     last_feature_cols = FEATURE_NAMES
 
+    # Out-of-sample prediction log, for the model-evaluation scorecard.
+    oos_true, oos_pred = [], []
+    ic_list, precision_at_k_list = [], []
+
     # Walk forward: trade from MIN_TRAIN_PERIODS until the second-to-last date
     # (the last date has no realised forward return to score against).
     for i in range(MIN_TRAIN_PERIODS, len(rebal) - 1):
@@ -172,6 +234,21 @@ def _run_backtest(top_k=10, model_name="gbr"):
 
         current = current.assign(pred=model.predict(current[FEATURE_NAMES]))
         picks = current.sort_values("pred", ascending=False).head(top_k)
+
+        # Log every out-of-sample (prediction, outcome) pair for model scoring.
+        scored = current.dropna(subset=["y"])
+        if not scored.empty:
+            oos_true.extend(scored["y"].tolist())
+            oos_pred.extend(scored["pred"].tolist())
+            if len(scored) >= 5:
+                ic = scored["pred"].corr(scored["y"], method="spearman")
+                if pd.notna(ic):
+                    ic_list.append(float(ic))
+            # precision@K: did this month's picks beat the cross-sectional median?
+            median_ret = scored["y"].median()
+            picks_actual = picks["y"].dropna()
+            if len(picks_actual):
+                precision_at_k_list.append(float((picks_actual > median_ret).mean()))
 
         realized = picks["y"].dropna()
         strat_ret = float(realized.mean()) if len(realized) else 0.0
@@ -231,6 +308,7 @@ def _run_backtest(top_k=10, model_name="gbr"):
         "curve": curve,
         "strategy": _metrics(strat_rets, RISK_FREE_RATE),
         "benchmark": _metrics(bench_rets, RISK_FREE_RATE),
+        "model_metrics": _model_eval_metrics(oos_true, oos_pred, ic_list, precision_at_k_list),
         "feature_importance": importance,
         "current_holdings": holdings,
     }
