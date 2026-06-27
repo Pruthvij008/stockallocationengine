@@ -9,13 +9,9 @@ exports.prediction = async (req, res) => {
       investment_period,
       risk_tolerance,
       expected_return,
+      num_stocks,
     } = req.body;
-    console.log(
-      investment_amount,
-      investment_period,
-      risk_tolerance,
-      expected_return
-    );
+
     if (!investment_amount || !investment_period || !risk_tolerance) {
       return res.status(400).json({
         success: false,
@@ -29,6 +25,7 @@ exports.prediction = async (req, res) => {
       investment_period,
       risk_tolerance,
       expected_return,
+      num_stocks,
     };
 
     // Send POST request to Flask server and await response
@@ -47,6 +44,16 @@ exports.prediction = async (req, res) => {
       data: null,
       message: "An error occurred while predicting the stock",
     });
+  }
+};
+
+exports.meta = async (req, res) => {
+  try {
+    const metaResponse = await axios.get(`${url}/meta`);
+    res.json(metaResponse.data);
+  } catch (error) {
+    console.error("Error occurred while fetching meta:", error.message);
+    res.status(500).json({ error: "Failed to fetch data coverage" });
   }
 };
 
