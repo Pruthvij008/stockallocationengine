@@ -12,7 +12,20 @@ import {
   FaChartPie,
   FaServer,
   FaCloudArrowDown,
+  FaBrain,
+  FaRobot,
+  FaCodeBranch,
+  FaClockRotateLeft,
 } from "react-icons/fa6";
+
+const fmtPct = (v) =>
+  v === null || v === undefined || Number.isNaN(Number(v))
+    ? "—"
+    : (Number(v) * 100).toFixed(1) + "%";
+const fmtNum = (v) =>
+  v === null || v === undefined || Number.isNaN(Number(v))
+    ? "—"
+    : Number(v).toFixed(2);
 
 const steps = [
   {
@@ -58,13 +71,37 @@ const guide = [
 const Home = () => {
   const navigate = useNavigate();
   const [meta, setMeta] = useState(null);
+  const [backtest, setBacktest] = useState(null);
+  const [btError, setBtError] = useState(false);
 
   useEffect(() => {
     axios
       .get(`${API_URL}/api/portfolio/meta`)
       .then((res) => setMeta(res.data))
       .catch(() => setMeta(null));
+
+    // Pull the latest walk-forward ML backtest so the home page can show the
+    // model's real, out-of-sample performance. First run trains dozens of
+    // models and can take ~90s; it's cached server-side after that.
+    axios
+      .get(`${API_URL}/api/portfolio/backtest`, { params: { top_k: 10, model: "gbr" } })
+      .then((res) => {
+        if (res.data?.error) setBtError(true);
+        else setBacktest(res.data);
+      })
+      .catch(() => setBtError(true));
   }, []);
+
+  const btBeats =
+    backtest &&
+    Number(backtest.strategy?.total_return) > Number(backtest.benchmark?.total_return);
+  const btMultiple =
+    backtest && Number(backtest.benchmark?.total_return) !== 0
+      ? (
+          (1 + Number(backtest.strategy?.total_return)) /
+          (1 + Number(backtest.benchmark?.total_return))
+        ).toFixed(1)
+      : null;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -359,6 +396,209 @@ minimize(neg_sharpe, w0,
         </p>
       </section>
 
+      {/* Two engines: deterministic vs machine learning */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold">Two engines, one app</h2>
+            <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+              Investify now runs <strong>two complementary methods</strong>. The
+              original <strong>deterministic optimizer</strong> powers the
+              Prediction &amp; Performance pages. A new{" "}
+              <strong>machine-learning strategy</strong> powers the Backtest page —
+              and is validated <em>out-of-sample</em>, the gold standard for
+              proving a model has real skill.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {/* Deterministic engine */}
+            <div className="iv-card p-7">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-600">
+                  <FaScaleBalanced />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Deterministic engine</h3>
+                  <p className="text-xs font-medium text-slate-500">
+                    Prediction &amp; Performance pages
+                  </p>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
+                <li>• <strong>Method:</strong> Markowitz mean-variance optimization (MPT).</li>
+                <li>• <strong>Algorithm:</strong> SciPy SLSQP solver, max-Sharpe weights.</li>
+                <li>• <strong>Answers:</strong> "Given these stocks, what's the optimal mix <em>right now?</em>"</li>
+                <li>• <strong>Nature:</strong> closed-form, reproducible, no training.</li>
+                <li>• <strong>Honest limit:</strong> it's an <em>in-sample</em> fit — it describes the past, it doesn't predict.</li>
+              </ul>
+              <button
+                onClick={() => navigate("/performance")}
+                className="mt-6 text-sm font-semibold text-customGreen-100 hover:underline"
+              >
+                See per-stock metrics →
+              </button>
+            </div>
+
+            {/* ML engine */}
+            <div className="iv-card p-7 ring-2 ring-customGreen-100/25">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/15 text-lg text-customGreen-100">
+                  <FaBrain />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Machine-learning strategy</h3>
+                  <p className="text-xs font-medium text-slate-500">Backtest page</p>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
+                <li>• <strong>Method:</strong> supervised learning that ranks stocks by predicted next-month return.</li>
+                <li>• <strong>Algorithm:</strong> Gradient Boosting (or Random Forest) regressor.</li>
+                <li>• <strong>Answers:</strong> "Which stocks will <em>outperform next month?</em>"</li>
+                <li>• <strong>Nature:</strong> retrained <strong>walk-forward</strong>, evaluated <strong>out-of-sample</strong>.</li>
+                <li>• <strong>Why it's credible:</strong> the model never sees the period it's scored on — no leakage.</li>
+              </ul>
+              <button
+                onClick={() => navigate("/backtest")}
+                className="mt-6 text-sm font-semibold text-customGreen-100 hover:underline"
+              >
+                Open the backtest →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ML model + live out-of-sample performance */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="text-center">
+          <span className="inline-block rounded-full bg-customGreen-100/15 px-4 py-1 text-sm font-semibold text-customGreen-100">
+            ✨ Machine learning · out-of-sample
+          </span>
+          <h2 className="mt-4 text-3xl font-bold">
+            The ML model — and how it actually performs
+          </h2>
+          <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+            Everything an interviewer would ask about the model: what it is, what
+            it learns from, how it's validated, and the real numbers it produced
+            on data it never trained on.
+          </p>
+        </div>
+
+        {/* Model spec */}
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="iv-card p-6">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
+              <FaRobot />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">The model</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              A <strong>Gradient Boosting Regressor</strong> (scikit-learn) — an
+              ensemble of shallow decision trees — predicts each stock's{" "}
+              <strong>next-month return</strong>. A{" "}
+              <strong>Random Forest</strong> is selectable as an alternative.
+              Each month we go long the top-ranked names, equal-weighted.
+            </p>
+          </div>
+          <div className="iv-card p-6">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
+              <FaCodeBranch />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">The features (no leakage)</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              Six cross-sectional signals per stock, all from{" "}
+              <em>past data only</em>: momentum over{" "}
+              <strong>1, 3, 6 and 12 months</strong> and volatility over{" "}
+              <strong>1 and 3 months</strong>. The label — next month's return —
+              is unknown at prediction time, so it can't leak in.
+            </p>
+          </div>
+          <div className="iv-card p-6">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
+              <FaClockRotateLeft />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">The validation</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <strong>Walk-forward</strong>: at every monthly rebalance the model
+              is retrained only on periods whose outcomes are already known, then
+              tested on the <em>next</em>, unseen month. This is the honest way to
+              prove skill — and it's exactly what the old leaky classifier failed.
+            </p>
+          </div>
+        </div>
+
+        {/* Live out-of-sample results */}
+        <div className="iv-card mt-6 p-7">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h3 className="text-lg font-semibold text-slate-900">
+              Out-of-sample results
+            </h3>
+            {backtest && (
+              <span className="text-xs font-medium text-slate-500">
+                {backtest.n_periods} monthly rebalances · {backtest.start} →{" "}
+                {backtest.end} · {backtest.universe_size} stocks
+              </span>
+            )}
+          </div>
+
+          {btError ? (
+            <p className="mt-6 text-sm text-slate-500">
+              Live backtest unavailable right now (start the Flask service to load
+              it). See the <button onClick={() => navigate("/backtest")} className="font-semibold text-customGreen-100 hover:underline">Backtest page</button> for full results.
+            </p>
+          ) : !backtest ? (
+            <div className="mt-6 flex items-center gap-3 text-sm text-slate-500">
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-customGreen-100 border-t-transparent" />
+              Training walk-forward models on the full history — first load can take
+              ~90 seconds, then it's cached…
+            </div>
+          ) : (
+            <>
+              <div className="mt-3 rounded-xl bg-slate-50 p-4 text-sm text-slate-700">
+                Over {backtest.n_periods} out-of-sample months, the ML strategy
+                returned{" "}
+                <strong className="text-slate-900">
+                  {fmtPct(backtest.strategy.total_return)}
+                </strong>{" "}
+                vs the Nifty 50's{" "}
+                <strong className="text-slate-900">
+                  {fmtPct(backtest.benchmark.total_return)}
+                </strong>
+                {btBeats && btMultiple ? (
+                  <> — about <strong className="text-customGreen-100">{btMultiple}× the index</strong>, on data the model never trained on.</>
+                ) : (
+                  <>.</>
+                )}
+              </div>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <PerfBlock
+                  title="ML strategy"
+                  accent="text-customGreen-100"
+                  highlight
+                  m={backtest.strategy}
+                />
+                <PerfBlock
+                  title="Nifty 50 (buy & hold)"
+                  accent="text-slate-700"
+                  m={backtest.benchmark}
+                />
+              </div>
+
+              <p className="mt-5 text-xs leading-relaxed text-slate-500">
+                <strong>A note on "accuracy":</strong> this is a ranking/regression
+                model, so the honest scorecard isn't classification accuracy — it's
+                out-of-sample portfolio performance. <strong>Win rate</strong> (the
+                share of months the strategy finished positive) is shown as a
+                directional proxy. Caveats: long-only, monthly rebalance, no
+                transaction costs — a research demonstrator, not a live trading
+                system.
+              </p>
+            </>
+          )}
+        </div>
+      </section>
+
       {/* User guide */}
       <section className="mx-auto max-w-4xl px-6 py-16">
         <h2 className="text-center text-3xl font-bold">Quick start guide</h2>
@@ -425,6 +665,29 @@ const CoverageStat = ({ label, value }) => (
   <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
     <div className="text-lg font-bold text-customGreen-100">{value ?? "—"}</div>
     <div className="mt-1 text-sm text-slate-400">{label}</div>
+  </div>
+);
+
+const PerfBlock = ({ title, m, accent, highlight }) => (
+  <div className={`rounded-2xl border p-5 ${highlight ? "border-customGreen-100/30 bg-customGreen-100/5" : "border-slate-200 bg-white"}`}>
+    <p className={`text-sm font-semibold ${accent}`}>{title}</p>
+    <div className="mt-3 grid grid-cols-3 gap-3 text-center">
+      <PerfStat label="Total" value={fmtPct(m.total_return)} />
+      <PerfStat label="CAGR" value={fmtPct(m.cagr)} />
+      <PerfStat label="Sharpe" value={fmtNum(m.sharpe)} />
+      <PerfStat label="Max DD" value={fmtPct(m.max_drawdown)} negative />
+      <PerfStat label="Volatility" value={fmtPct(m.volatility)} />
+      <PerfStat label="Win rate" value={fmtPct(m.win_rate)} />
+    </div>
+  </div>
+);
+
+const PerfStat = ({ label, value, negative }) => (
+  <div>
+    <p className={`text-base font-bold ${negative ? "text-red-500" : "text-slate-900"}`}>
+      {value}
+    </p>
+    <p className="mt-0.5 text-[11px] text-slate-500">{label}</p>
   </div>
 );
 

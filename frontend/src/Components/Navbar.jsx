@@ -5,6 +5,7 @@ const links = [
   { label: "Home", path: "/" },
   { label: "Predictions", path: "/prediction" },
   { label: "Performance", path: "/performance" },
+  { label: "Backtest", path: "/backtest" },
 ];
 
 const Navbar = () => {
