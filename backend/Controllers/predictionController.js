@@ -57,6 +57,21 @@ exports.meta = async (req, res) => {
   }
 };
 
+exports.backtest = async (req, res) => {
+  try {
+    // Pass through query params (top_k, model) to the Flask ML service.
+    const response = await axios.get(`${url}/backtest`, { params: req.query });
+    res.json(response.data);
+  } catch (error) {
+    console.error("Error occurred while running the backtest:", error.message);
+    res.status(500).json({
+      error: error.response
+        ? error.response.data.error
+        : "Failed to run the backtest",
+    });
+  }
+};
+
 exports.summary = async (req, res) => {
   try {
     const summaryResponse = await axios.get(`${url}/summary`);
