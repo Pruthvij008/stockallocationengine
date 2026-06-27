@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 // CORS configuration
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: [
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 });
 
 // Server
-const port = process.env.PORT ||8080; // Default to 5000 if no port in .env
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

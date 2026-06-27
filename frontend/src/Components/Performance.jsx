@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
 import Loader from "./loader";
+import { API_URL } from "../api";
 
 const Performance = () => {
   const [data, setData] = useState(null);
@@ -11,7 +12,7 @@ const Performance = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/portfolio/summary"
+          `${API_URL}/api/portfolio/summary`
         );
         setData(response.data);
       } catch (error) {
@@ -26,6 +27,12 @@ const Performance = () => {
   const loadMoreRows = () => {
     setVisibleRows((prevVisibleRows) => prevVisibleRows + 10); // Increase visible rows by 10
   };
+
+  // Safely format a numeric metric that may be null (e.g. market data offline)
+  const fmt = (value) =>
+    value === null || value === undefined || Number.isNaN(Number(value))
+      ? "—"
+      : Number(value).toFixed(2);
 
   return (
     <div className="container mx-auto">
@@ -60,15 +67,15 @@ const Performance = () => {
                       <div className="truncate">
                         <b>{stock}</b>
                       </div>
-                      <div>{data[stock].Return.toFixed(2)}</div>
-                      <div>{data[stock].Risk.toFixed(2)}</div>
-                      <div>{data[stock].SystRisk_var.toFixed(2)}</div>
-                      <div>{data[stock].TotalRisk_var.toFixed(2)}</div>
-                      <div>{data[stock].UnsystRisk_var.toFixed(2)}</div>
-                      <div>{data[stock].alpha.toFixed(2)}</div>
-                      <div>{data[stock].beta.toFixed(2)}</div>
-                      <div>{data[stock].capm_ret.toFixed(2)}</div>
-                      <div>{data[stock].sharpe.toFixed(2)}</div>
+                      <div>{fmt(data[stock].Return)}</div>
+                      <div>{fmt(data[stock].Risk)}</div>
+                      <div>{fmt(data[stock].SystRisk_var)}</div>
+                      <div>{fmt(data[stock].TotalRisk_var)}</div>
+                      <div>{fmt(data[stock].UnsystRisk_var)}</div>
+                      <div>{fmt(data[stock].alpha)}</div>
+                      <div>{fmt(data[stock].beta)}</div>
+                      <div>{fmt(data[stock].capm_ret)}</div>
+                      <div>{fmt(data[stock].sharpe)}</div>
                     </div>
                   ))
               ) : (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { Pie, Bar } from "react-chartjs-2";
 import axios from "axios";
+import { API_URL } from "../api";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -59,7 +60,7 @@ const Prediction = () => {
     setLastElement(null);
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/portfolio/prediction",
+        `${API_URL}/api/portfolio/prediction`,
         userInput
       );
 
