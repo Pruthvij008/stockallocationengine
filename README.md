@@ -60,6 +60,34 @@ npm run dev
 
 Then open http://localhost:5173.
 
+## Deployment (Render)
+
+The repo ships a `render.yaml` Blueprint that provisions all three pieces:
+
+| Service | Type | Notes |
+| --- | --- | --- |
+| `investify-web` | Static Site | React build — always on, never sleeps |
+| `investify-api` | Web Service (Node) | Express proxy |
+| `investify-ml` | Web Service (Python) | Flask + gunicorn |
+
+Steps:
+
+1. Push this repo to GitHub.
+2. In Render: **New → Blueprint**, pick the repo. Render reads `render.yaml` and
+   creates the three services, wiring the cross-service URLs automatically.
+3. Open the `investify-web` URL.
+
+**Health checks:** `GET /api/health` (Express) and `GET /health` (Flask).
+
+**Keep-alive:** free web services sleep after ~15 min idle. Each backend
+self-pings when running, but to guarantee they stay awake, add a free uptime
+monitor (e.g. [cron-job.org](https://cron-job.org) or UptimeRobot) that hits
+`https://investify-api.onrender.com/api/health` every ~10 minutes — that endpoint
+also warms the Flask service.
+
+> First backtest load trains the walk-forward models (~90s) and is cached for the
+> day. The free 512 MB instances are enough for a demo but can be tight.
+
 ## Notes
 
 - The Flask service reads `backend/stock_data.csv` and `backend/sp500_selected_stocks.csv`

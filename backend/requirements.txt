@@ -4,6 +4,8 @@ numpy>=1.26
 scipy>=1.13
 scikit-learn>=1.4
 yfinance>=0.2.50
+# Production WSGI server (used when hosting, e.g. `gunicorn fly:app`)
+gunicorn>=21.2
 # Optional: only needed by flyprev.py (the earlier FRED-based variant)
 fredapi>=0.5.2
 matplotlib>=3.9
