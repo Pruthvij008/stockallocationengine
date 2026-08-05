@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from flask import Flask, request, jsonify
 import pandas as pd
@@ -17,9 +18,22 @@ _PRICE_CACHE = {"date": None, "adj_close": None}
 
 
 def _universe_tickers():
-    """The investable universe, taken from the columns of the bundled CSV."""
+    """The investable universe, taken from the columns of the bundled CSV.
+
+    On a memory-constrained host (e.g. a 512 MB free instance) set MAX_TICKERS
+    to cap the universe — downloading and processing every ticker can otherwise
+    exceed the memory limit and get the process killed.
+    """
     header = pd.read_csv("stock_data.csv", header=[0, 1], index_col=0, nrows=1)
-    return sorted({ticker for _, ticker in header.columns})
+    tickers = sorted({ticker for _, ticker in header.columns})
+
+    max_n = os.environ.get("MAX_TICKERS")
+    if max_n:
+        try:
+            tickers = tickers[: max(2, int(max_n))]
+        except ValueError:
+            pass
+    return tickers
 
 
 def get_price_data():

@@ -25,6 +25,7 @@ the period it is judged on.
 """
 
 import datetime
+import os
 
 import numpy as np
 import pandas as pd
@@ -88,14 +89,19 @@ def _build_panels(prices, rebal):
     return panels, period_returns
 
 
+# Number of trees. Lower keeps memory/CPU down on small hosted instances;
+# override with N_ESTIMATORS if you have a bigger box.
+_N_ESTIMATORS = int(os.environ.get("N_ESTIMATORS", "80"))
+
+
 def _make_model(model_name):
     if model_name == "rf":
         return RandomForestRegressor(
-            n_estimators=200, max_depth=5, min_samples_leaf=20,
-            n_jobs=-1, random_state=42,
+            n_estimators=_N_ESTIMATORS, max_depth=5, min_samples_leaf=20,
+            n_jobs=1, random_state=42,
         )
     return GradientBoostingRegressor(
-        n_estimators=150, max_depth=3, learning_rate=0.05,
+        n_estimators=_N_ESTIMATORS, max_depth=3, learning_rate=0.07,
         subsample=0.8, random_state=42,
     )
 
