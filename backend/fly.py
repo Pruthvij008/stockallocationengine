@@ -323,6 +323,13 @@ def get_summary():
     return jsonify(load_and_process_data())
 
 
+@app.route("/health", methods=["GET"])
+def health():
+    """Cheap liveness probe — no yfinance calls. Used by the host's health
+    check and the keep-alive pinger so this service stays warm."""
+    return jsonify({"status": "ok", "service": "flask"})
+
+
 @app.route("/meta", methods=["GET"])
 def get_meta():
     """Coverage info about the data we currently hold (for the UI)."""

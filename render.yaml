@@ -1,0 +1,67 @@
+# Render Blueprint — deploys the whole Investify stack in one click.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Three services:
+#   investify-ml   — Flask ML/quant service (Python, gunicorn)   [sleeps on free]
+#   investify-api  — Express proxy API (Node)                    [sleeps on free]
+#   investify-web  — React build served as a Static Site         [always on]
+#
+# Cross-service URLs are wired with `fromService … property: host`, which yields
+# a bare hostname; the app code prepends https:// automatically.
+
+services:
+  # ---- Flask ML service ----
+  - type: web
+    name: investify-ml
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    # 180s timeout so the first (uncached) walk-forward backtest can finish.
+    startCommand: gunicorn fly:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+
+  # ---- Express proxy API ----
+  - type: web
+    name: investify-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20.11.1"
+      - key: FLASK_SERVER_URL
+        fromService:
+          type: web
+          name: investify-ml
+          property: host
+      - key: CLIENT_ORIGIN
+        fromService:
+          type: web
+          name: investify-web
+          property: host
+
+  # ---- React frontend (static site — never sleeps) ----
+  - type: web
+    name: investify-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: investify-api
+          property: host
+    # SPA fallback so client-side routes (/backtest, /performance, …) work.
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
