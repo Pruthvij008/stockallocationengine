@@ -1,0 +1,22 @@
+name: keep-alive
+
+# Pings the deployed backend so Render's free web services don't spin down
+# after ~15 min of inactivity. Runs on a schedule from the default branch.
+# (GitHub may delay scheduled runs under load; the app also self-pings, so this
+# is the external belt-and-suspenders layer.)
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # every 10 minutes
+  workflow_dispatch: # allows a manual run from the Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake Express (which also warms Flask)
+        run: |
+          curl -fsS -m 90 https://investify-api-72c7.onrender.com/api/health || true
+      - name: Wake Flask directly
+        run: |
+          curl -fsS -m 90 https://investify-ml.onrender.com/health || true
