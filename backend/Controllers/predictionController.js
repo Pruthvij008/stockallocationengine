@@ -60,8 +60,10 @@ exports.meta = async (req, res) => {
 exports.backtest = async (req, res) => {
   try {
     // Pass through query params (top_k, model) to the Flask ML service.
+    // The backtest runs in the background there, so preserve the 202
+    // "still computing" status — the client polls until it gets a 200.
     const response = await axios.get(`${url}/backtest`, { params: req.query });
-    res.json(response.data);
+    res.status(response.status).json(response.data);
   } catch (error) {
     console.error("Error occurred while running the backtest:", error.message);
     res.status(500).json({

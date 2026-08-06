@@ -26,6 +26,7 @@ the period it is judged on.
 
 import datetime
 import os
+import threading
 
 import numpy as np
 import pandas as pd
@@ -54,6 +55,20 @@ MIN_TRAIN_ROWS = 60  # require a reasonable sample before trusting the model
 # Cache results for the day, keyed by the request parameters, since a backtest
 # trains dozens of models and is far too slow to recompute on every page load.
 _BACKTEST_CACHE = {}
+
+# A backtest takes ~60-90s. Running that inside the request would tie up the
+# (single, memory-constrained) worker long enough for the host's health check to
+# time out and restart the instance. So it runs on a background thread and the
+# endpoint reports progress; the client polls until the result is ready.
+_BACKTEST_JOBS = {}
+_JOBS_LOCK = threading.Lock()
+
+
+def _set_progress(cache_key, done, total):
+    with _JOBS_LOCK:
+        job = _BACKTEST_JOBS.get(cache_key)
+        if job is not None:
+            job["progress"] = round(done / total, 3) if total else 0.0
 
 
 def _rebalance_dates(index):
@@ -194,7 +209,7 @@ def _model_eval_metrics(y_true, y_pred, ic_list, precision_at_k_list):
     }
 
 
-def _run_backtest(top_k=10, model_name="gbr"):
+def _run_backtest(top_k=10, model_name="gbr", on_progress=None):
     # Lazy import to avoid a circular import with fly.py.
     from fly import get_price_data, _fetch_index_returns, RISK_FREE_RATE
 
@@ -222,11 +237,21 @@ def _run_backtest(top_k=10, model_name="gbr"):
 
     # Walk forward: trade from MIN_TRAIN_PERIODS until the second-to-last date
     # (the last date has no realised forward return to score against).
+    total_steps = max(1, len(rebal) - 1 - MIN_TRAIN_PERIODS)
+
+    # Training set grows by one period per step; accumulate incrementally rather
+    # than re-concatenating every panel on each iteration.
+    train_parts = [panels[rebal[j]] for j in range(MIN_TRAIN_PERIODS)]
+
     for i in range(MIN_TRAIN_PERIODS, len(rebal) - 1):
         d = rebal[i]
+        if on_progress is not None:
+            on_progress(i - MIN_TRAIN_PERIODS, total_steps)
 
         # Train only on periods whose labels are already realised (j <= i-1).
-        train = pd.concat([panels[rebal[j]] for j in range(i)]).dropna()
+        if i > MIN_TRAIN_PERIODS:
+            train_parts.append(panels[rebal[i - 1]])
+        train = pd.concat(train_parts).dropna()
         if len(train) < MIN_TRAIN_ROWS:
             continue
 
@@ -320,8 +345,31 @@ def _run_backtest(top_k=10, model_name="gbr"):
     }
 
 
+def _backtest_worker(cache_key, top_k, model_name):
+    """Run the backtest off the request thread and stash the result."""
+    try:
+        result = _run_backtest(
+            top_k=top_k,
+            model_name=model_name,
+            on_progress=lambda done, total: _set_progress(cache_key, done, total),
+        )
+        _BACKTEST_CACHE[cache_key] = result
+        with _JOBS_LOCK:
+            _BACKTEST_JOBS.pop(cache_key, None)
+    except Exception as exc:
+        print(f"Backtest failed: {exc}")
+        with _JOBS_LOCK:
+            _BACKTEST_JOBS[cache_key] = {"status": "error", "error": str(exc), "progress": 0.0}
+
+
 @backtest_bp.route("/backtest", methods=["GET"])
 def backtest():
+    """Return the cached backtest, or kick one off and report progress.
+
+    Responds 202 with {"status": "computing"} while the background job runs, so
+    no request ever blocks long enough to trip the host's health check. The
+    client polls this same URL until it gets the 200 result.
+    """
     try:
         top_k = int(float(request.args.get("top_k") or 10))
         top_k = max(3, min(top_k, 25))
@@ -329,13 +377,33 @@ def backtest():
         if model_name not in ("gbr", "rf"):
             model_name = "gbr"
 
-        cache_key = (datetime.date.today(), top_k, model_name)
-        if cache_key in _BACKTEST_CACHE:
-            return jsonify(_BACKTEST_CACHE[cache_key])
+        cache_key = (str(datetime.date.today()), top_k, model_name)
+        cached = _BACKTEST_CACHE.get(cache_key)
+        if cached is not None:
+            return jsonify(cached)
 
-        result = _run_backtest(top_k=top_k, model_name=model_name)
-        _BACKTEST_CACHE[cache_key] = result
-        return jsonify(result)
+        with _JOBS_LOCK:
+            job = _BACKTEST_JOBS.get(cache_key)
+            if job and job.get("status") == "error":
+                _BACKTEST_JOBS.pop(cache_key, None)
+                return jsonify({"error": job.get("error", "backtest failed")}), 500
+            if job is None:
+                _BACKTEST_JOBS[cache_key] = {"status": "computing", "progress": 0.0}
+                thread = threading.Thread(
+                    target=_backtest_worker,
+                    args=(cache_key, top_k, model_name),
+                    daemon=True,
+                )
+                thread.start()
+                progress = 0.0
+            else:
+                progress = job.get("progress", 0.0)
+
+        return jsonify({
+            "status": "computing",
+            "progress": progress,
+            "message": "Training walk-forward models; poll this endpoint for the result.",
+        }), 202
     except Exception as exc:
-        print(f"Backtest failed: {exc}")
+        print(f"Backtest request failed: {exc}")
         return jsonify({"error": str(exc)}), 500

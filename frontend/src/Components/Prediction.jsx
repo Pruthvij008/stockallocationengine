@@ -20,6 +20,7 @@ import {
   formatINR,
   formatCompactINR,
   formatNum,
+  formatDate,
 } from "../utils/format";
 
 ChartJS.register(
@@ -37,9 +38,9 @@ const PALETTE = (n) =>
   Array.from({ length: n }, (_, i) => `hsl(${Math.round((360 * i) / n)}, 65%, 55%)`);
 
 const LoadingSpinner = () => (
-  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-white/80 backdrop-blur">
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-[color:var(--iv-page)]/85 backdrop-blur">
     <div className="h-16 w-16 animate-spin rounded-full border-4 border-customGreen-100 border-t-transparent" />
-    <p className="text-lg font-medium text-slate-700">
+    <p className="text-lg font-medium iv-heading">
       Crunching live market data & optimizing your portfolio…
     </p>
   </div>
@@ -186,16 +187,16 @@ const Prediction = () => {
   };
 
   const inputClass =
-    "mt-2 block w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-customGreen-100 focus:bg-white";
+    "iv-heading mt-2 block w-full rounded-xl border-2 border-[color:var(--iv-border)] bg-[color:var(--iv-surface-muted)] px-4 py-3 outline-none transition focus:border-customGreen-100 focus:bg-[color:var(--iv-surface)]";
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="iv-page min-h-screen">
       <Navbar />
       {loading && <LoadingSpinner />}
 
-      <div className="mx-auto max-w-6xl px-6 pt-24 pb-16">
-        <h1 className="text-3xl font-bold text-slate-900">Build your portfolio</h1>
-        <p className="mt-2 text-slate-600">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-24 pb-16">
+        <h1 className="iv-heading text-2xl font-bold sm:text-3xl">Build your portfolio</h1>
+        <p className="mt-2 iv-muted">
           Enter your details and we'll allocate a diversified, risk-matched
           basket of stocks using live data.
         </p>
@@ -205,7 +206,7 @@ const Prediction = () => {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Amount */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="block text-sm font-semibold iv-heading">
                 Investment amount
               </label>
               <input
@@ -219,7 +220,7 @@ const Prediction = () => {
                 placeholder="e.g. 5L, 2.5Cr, 1M"
                 className={inputClass}
               />
-              <p className="mt-1 h-5 text-xs text-slate-500">
+              <p className="mt-1 h-5 text-xs iv-muted">
                 {amountText
                   ? `= ${formatINR(parsedAmount)}`
                   : "Type k=thousand, l=lakh, m=million, c=crore, b=billion"}
@@ -228,7 +229,7 @@ const Prediction = () => {
 
             {/* Period */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="block text-sm font-semibold iv-heading">
                 Investment period
               </label>
               <div className="relative">
@@ -240,18 +241,18 @@ const Prediction = () => {
                   onChange={(e) => setPeriod(Number(e.target.value))}
                   className={inputClass + " pr-16"}
                 />
-                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">
+                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium iv-subtle">
                   years
                 </span>
               </div>
-              <p className="mt-1 h-5 text-xs text-slate-500">
+              <p className="mt-1 h-5 text-xs iv-muted">
                 How long you'll stay invested.
               </p>
             </div>
 
             {/* Risk */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="block text-sm font-semibold iv-heading">
                 Risk tolerance
               </label>
               <select
@@ -264,14 +265,14 @@ const Prediction = () => {
                 <option value="medium">Medium — balanced</option>
                 <option value="high">High — bigger swings & upside</option>
               </select>
-              <p className="mt-1 h-5 text-xs text-slate-500">
+              <p className="mt-1 h-5 text-xs iv-muted">
                 Sets how volatile your stocks can be.
               </p>
             </div>
 
             {/* Num stocks */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="block text-sm font-semibold iv-heading">
                 Number of stocks
               </label>
               <select
@@ -285,7 +286,7 @@ const Prediction = () => {
                   </option>
                 ))}
               </select>
-              <p className="mt-1 h-5 text-xs text-slate-500">
+              <p className="mt-1 h-5 text-xs iv-muted">
                 How many names to spread across.
               </p>
             </div>
@@ -307,10 +308,10 @@ const Prediction = () => {
         {predictionData && (
           <>
             {predictionData.data_as_of && (
-              <p className="mt-6 text-sm text-slate-500">
+              <p className="mt-6 text-sm iv-muted">
                 Live market data as of{" "}
-                <span className="font-medium text-slate-700">
-                  {predictionData.data_as_of}
+                <span className="iv-nowrap font-medium iv-heading">
+                  {formatDate(predictionData.data_as_of)}
                 </span>
               </p>
             )}
@@ -337,20 +338,20 @@ const Prediction = () => {
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <div className="iv-card p-6">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-slate-800">
+                  <h3 className="text-lg font-semibold iv-heading">
                     {graphType === "allocation"
                       ? "Allocation"
                       : "Projected growth"}
                   </h3>
-                  <div className="flex rounded-lg bg-slate-100 p-1 text-sm">
+                  <div className="flex rounded-lg iv-surface-muted p-1 text-sm">
                     {["allocation", "growth"].map((t) => (
                       <button
                         key={t}
                         onClick={() => setGraphType(t)}
                         className={`rounded-md px-3 py-1 capitalize transition ${
                           graphType === t
-                            ? "bg-white font-semibold text-slate-900 shadow"
-                            : "text-slate-500"
+                            ? "iv-surface iv-heading font-semibold shadow"
+                            : "iv-muted"
                         }`}
                       >
                         {t}
@@ -369,13 +370,13 @@ const Prediction = () => {
 
               {/* Holdings table */}
               <div className="iv-card overflow-hidden p-6">
-                <h3 className="mb-4 text-lg font-semibold text-slate-800">
+                <h3 className="mb-4 text-lg font-semibold iv-heading">
                   Holdings
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
+                      <tr className="border-b border-[color:var(--iv-border)] text-left text-xs uppercase tracking-wide iv-muted">
                         <th className="py-2 pr-2">Stock</th>
                         <th className="py-2 px-2 text-right">Weight</th>
                         <th className="py-2 px-2 text-right">Return</th>
@@ -389,9 +390,9 @@ const Prediction = () => {
                         return (
                           <tr
                             key={r.Ticker}
-                            className="border-b border-slate-100 hover:bg-slate-50"
+                            className="border-b border-[color:var(--iv-border)] hover:bg-[color:var(--iv-surface-muted)]"
                           >
-                            <td className="py-2 pr-2 font-medium text-slate-800">
+                            <td className="py-2 pr-2 font-medium iv-heading">
                               {r.Ticker.replace(".NS", "")}
                             </td>
                             <td className="py-2 px-2 text-right font-semibold text-customGreen-100">
@@ -404,7 +405,7 @@ const Prediction = () => {
                         );
                       })}
                       {overall && (
-                        <tr className="bg-slate-100 font-semibold">
+                        <tr className="iv-surface-muted font-semibold">
                           <td className="py-2 pr-2">Portfolio</td>
                           <td className="py-2 px-2 text-right">100%</td>
                           <td className="py-2 px-2 text-right">
@@ -425,7 +426,7 @@ const Prediction = () => {
             {/* Stock info */}
             {predictionData.stock_info && (
               <div className="mt-6">
-                <h3 className="mb-4 text-lg font-semibold text-slate-800">
+                <h3 className="mb-4 text-lg font-semibold iv-heading">
                   About these companies
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -433,7 +434,7 @@ const Prediction = () => {
                     ([ticker, info]) => (
                       <div key={ticker} className="iv-card iv-card-hover p-5">
                         <div className="flex items-center justify-between">
-                          <h4 className="text-base font-bold text-slate-900">
+                          <h4 className="text-base font-bold iv-heading">
                             {ticker.replace(".NS", "")}
                           </h4>
                           {info.Sector && (
@@ -442,7 +443,7 @@ const Prediction = () => {
                             </span>
                           )}
                         </div>
-                        <dl className="mt-3 space-y-1 text-sm text-slate-600">
+                        <dl className="mt-3 space-y-1 text-sm iv-muted">
                           <Row k="Industry" v={info.Industry || "—"} />
                           <Row
                             k="Market cap"
@@ -468,7 +469,7 @@ const Prediction = () => {
         )}
 
         {!predictionData && !loading && (
-          <div className="iv-card mt-8 flex flex-col items-center justify-center gap-2 p-16 text-center text-slate-400">
+          <div className="iv-card mt-8 flex flex-col items-center justify-center gap-2 p-16 text-center iv-subtle">
             <p className="text-lg">Your optimized portfolio will appear here.</p>
             <p className="text-sm">
               Fill in the form above and hit Calculate.
@@ -480,18 +481,18 @@ const Prediction = () => {
   );
 };
 
-const StatCard = ({ label, value, sub, accent = "text-slate-900" }) => (
+const StatCard = ({ label, value, sub, accent = "iv-heading" }) => (
   <div className="iv-card p-5">
-    <p className="text-sm text-slate-500">{label}</p>
+    <p className="text-sm iv-muted">{label}</p>
     <p className={`mt-1 text-2xl font-bold ${accent}`}>{value}</p>
-    {sub && <p className="mt-1 text-xs text-slate-400">{sub}</p>}
+    {sub && <p className="mt-1 text-xs iv-subtle">{sub}</p>}
   </div>
 );
 
 const Row = ({ k, v }) => (
   <div className="flex justify-between gap-4">
-    <dt className="text-slate-400">{k}</dt>
-    <dd className="text-right font-medium text-slate-700">{v}</dd>
+    <dt className="iv-subtle">{k}</dt>
+    <dd className="text-right font-medium iv-heading">{v}</dd>
   </div>
 );
 
