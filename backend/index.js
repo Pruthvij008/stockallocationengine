@@ -33,7 +33,16 @@ app.use(
 // Health check — cheap, no downstream calls; used by Render's health probe and
 // by the keep-alive pinger.
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", service: "express", time: new Date().toISOString() });
+  // Also report whether the upstream ML service is configured. Without
+  // FLASK_SERVER_URL every proxied call fails instantly, which is otherwise
+  // indistinguishable from the ML service being down.
+  res.json({
+    status: "ok",
+    service: "express",
+    upstreamConfigured: Boolean(process.env.FLASK_SERVER_URL),
+    upstream: process.env.FLASK_SERVER_URL || null,
+    time: new Date().toISOString(),
+  });
 });
 
 // Routes

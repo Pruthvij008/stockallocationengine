@@ -2,6 +2,21 @@ const axios = require("axios");
 require("dotenv").config();
 const url = process.env.FLASK_SERVER_URL;
 
+if (!url) {
+  console.error(
+    "FLASK_SERVER_URL is not set — every call to the ML service will fail. " +
+      "Set it to the Flask service's URL (e.g. https://investify-ml.onrender.com)."
+  );
+}
+
+// Distinguishes "not configured" and "upstream unreachable" from a genuine
+// error returned by the ML service, so a misconfigured deploy is obvious.
+const upstreamError = (error, fallback) => {
+  if (!url) return "ML service URL is not configured (FLASK_SERVER_URL)";
+  if (error.response) return error.response.data?.error || fallback;
+  return `Could not reach the ML service at ${url}`;
+};
+
 exports.prediction = async (req, res) => {
   try {
     const {
@@ -53,7 +68,7 @@ exports.meta = async (req, res) => {
     res.json(metaResponse.data);
   } catch (error) {
     console.error("Error occurred while fetching meta:", error.message);
-    res.status(500).json({ error: "Failed to fetch data coverage" });
+    res.status(500).json({ error: upstreamError(error, "Failed to fetch data coverage") });
   }
 };
 
@@ -66,11 +81,7 @@ exports.backtest = async (req, res) => {
     res.status(response.status).json(response.data);
   } catch (error) {
     console.error("Error occurred while running the backtest:", error.message);
-    res.status(500).json({
-      error: error.response
-        ? error.response.data.error
-        : "Failed to run the backtest",
-    });
+    res.status(500).json({ error: upstreamError(error, "Failed to run the backtest") });
   }
 };
 
@@ -82,10 +93,6 @@ exports.summary = async (req, res) => {
     res.json(summaryResponse.data);
   } catch (error) {
     console.error("Error occurred while fetching the summary:", error.message);
-    res.status(500).json({
-      error: error.response
-        ? error.response.data.error
-        : "Internal server error",
-    });
+    res.status(500).json({ error: upstreamError(error, "Internal server error") });
   }
 };
