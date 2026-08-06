@@ -17,8 +17,11 @@ services:
     plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
-    # 180s timeout so the first (uncached) walk-forward backtest can finish.
-    startCommand: gunicorn fly:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180
+    # One worker (memory-bound), several threads so the cheap /health probe is
+    # always servable while a heavier request is in flight. The backtest itself
+    # runs on its own background thread, so no request occupies a worker for
+    # minutes at a time.
+    startCommand: gunicorn fly:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 120
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION

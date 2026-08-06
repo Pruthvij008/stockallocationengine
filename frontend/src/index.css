@@ -1,10 +1,42 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+/* Class-based dark mode (Tailwind v4). The <html> element gets .dark, which
+   ThemeToggle sets from localStorage / the OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic tokens — surfaces and text resolve through these so both themes
+   stay consistent without duplicating a dark: variant on every element. */
+:root {
+  --iv-page: #f8fafc;
+  --iv-surface: #ffffff;
+  --iv-surface-muted: #f1f5f9;
+  --iv-border: #e2e8f0;
+  --iv-text: #0f172a;
+  --iv-text-muted: #475569;
+  --iv-text-subtle: #94a3b8;
+  --iv-shadow: 15 23 42;
+}
+
+html.dark {
+  --iv-page: #0b1120;
+  --iv-surface: #131c31;
+  --iv-surface-muted: #1b2540;
+  --iv-border: #27324d;
+  --iv-text: #e8edf7;
+  --iv-text-muted: #a3aec6;
+  --iv-text-subtle: #7b87a3;
+  --iv-shadow: 0 0 0;
+}
+
 /* Reserve the scrollbar gutter so navigating between pages with/without a
    vertical scrollbar (e.g. Performance) doesn't shift the layout sideways. */
 html {
   scrollbar-gutter: stable;
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -13,26 +45,104 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: var(--iv-page);
+  color: var(--iv-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* Page background that follows the theme. */
+.iv-page {
+  background-color: var(--iv-page);
+  color: var(--iv-text);
+}
+
 /* Subtle reusable card */
 .iv-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--iv-surface);
+  border: 1px solid var(--iv-border);
   border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 3px rgb(var(--iv-shadow) / 0.06),
+    0 1px 2px rgb(var(--iv-shadow) / 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .iv-card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, border-color 0.2s ease;
 }
 .iv-card-hover:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 12px 24px rgb(var(--iv-shadow) / 0.1);
+}
+
+/* Theme-aware helpers, so components don't need paired dark: variants. */
+.iv-heading {
+  color: var(--iv-text);
+}
+.iv-muted {
+  color: var(--iv-text-muted);
+}
+.iv-subtle {
+  color: var(--iv-text-subtle);
+}
+.iv-surface {
+  background-color: var(--iv-surface);
+}
+.iv-surface-muted {
+  background-color: var(--iv-surface-muted);
+}
+.iv-hairline {
+  border-color: var(--iv-border);
+}
+
+/* Keep date ranges (e.g. "01-Jan-2020 → 06-Aug-2026") on a single line. */
+.iv-nowrap {
+  white-space: nowrap;
+}
+
+/* Loading shimmer used by the skeleton loaders. */
+@keyframes iv-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.iv-skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--iv-surface-muted);
+  border-radius: 0.5rem;
+}
+.iv-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0) 0,
+    rgba(148, 163, 184, 0.18) 50%,
+    rgba(148, 163, 184, 0) 100%
+  );
+  animation: iv-shimmer 1.6s infinite;
+}
+html.dark .iv-skeleton::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iv-skeleton::after {
+    animation: none;
+  }
+  .iv-card-hover:hover {
+    transform: none;
+  }
 }

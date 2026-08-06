@@ -58,3 +58,46 @@ export function formatNum(value, decimals = 2) {
   if (value === null || value === undefined || Number.isNaN(Number(value))) return "—";
   return Number(value).toFixed(decimals);
 }
+
+// ---------------------------------------------------------------------------
+// Dates. The UI shows dd-MMM-yyyy (e.g. 06-Aug-2026) everywhere — unambiguous
+// no matter which day/month ordering the reader expects.
+// ---------------------------------------------------------------------------
+
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+// Accepts "YYYY-MM-DD" (what the API returns), an ISO timestamp, or a Date.
+// Plain YYYY-MM-DD is parsed by hand so a UTC/local shift can't move the day.
+export function formatDate(value) {
+  if (value === null || value === undefined || value === "") return "—";
+
+  if (typeof value === "string") {
+    const m = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (m) {
+      const month = MONTHS[Number(m[2]) - 1];
+      if (month) return `${m[3]}-${month}-${m[1]}`;
+    }
+  }
+
+  const dt = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(dt.getTime())) return String(value);
+  const dd = String(dt.getDate()).padStart(2, "0");
+  return `${dd}-${MONTHS[dt.getMonth()]}-${dt.getFullYear()}`;
+}
+
+// Compact variant for dense chart axes: MMM-yy (e.g. Aug-26).
+export function formatDateShort(value) {
+  const full = formatDate(value);
+  const parts = full.split("-");
+  if (parts.length !== 3) return full;
+  return `${parts[1]}-${parts[2].slice(2)}`;
+}
+
+// "01-Jan-2020 → 06-Aug-2026" — pair with the .iv-nowrap class to keep it on
+// a single line.
+export function formatDateRange(start, end) {
+  return `${formatDate(start)} → ${formatDate(end)}`;
+}

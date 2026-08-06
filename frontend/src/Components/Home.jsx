@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { API_URL } from "../api";
+import { ProgressLoader } from "./loader";
+import { formatDate } from "../utils/format";
 import {
   FaArrowTrendUp,
   FaDatabase,
@@ -73,23 +75,45 @@ const Home = () => {
   const [meta, setMeta] = useState(null);
   const [backtest, setBacktest] = useState(null);
   const [btError, setBtError] = useState(false);
+  const [btProgress, setBtProgress] = useState(0);
+  const btTimer = useRef(null);
 
   useEffect(() => {
+    let cancelled = false;
+
     axios
       .get(`${API_URL}/api/portfolio/meta`)
-      .then((res) => setMeta(res.data))
-      .catch(() => setMeta(null));
+      .then((res) => !cancelled && setMeta(res.data))
+      .catch(() => !cancelled && setMeta(null));
 
     // Pull the latest walk-forward ML backtest so the home page can show the
-    // model's real, out-of-sample performance. First run trains dozens of
-    // models and can take ~90s; it's cached server-side after that.
-    axios
-      .get(`${API_URL}/api/portfolio/backtest`, { params: { top_k: 10, model: "gbr" } })
-      .then((res) => {
-        if (res.data?.error) setBtError(true);
-        else setBacktest(res.data);
-      })
-      .catch(() => setBtError(true));
+    // model's real, out-of-sample performance. It's computed in the background
+    // on the server (202 + progress) and cached for the day, so poll until the
+    // result is ready.
+    const fetchBacktest = () => {
+      axios
+        .get(`${API_URL}/api/portfolio/backtest`, {
+          params: { top_k: 10, model: "gbr" },
+          validateStatus: (s) => s === 200 || s === 202,
+        })
+        .then((res) => {
+          if (cancelled) return;
+          if (res.status === 202) {
+            setBtProgress(Number(res.data?.progress) || 0);
+            btTimer.current = setTimeout(fetchBacktest, 5000);
+            return;
+          }
+          if (res.data?.error) setBtError(true);
+          else setBacktest(res.data);
+        })
+        .catch(() => !cancelled && setBtError(true));
+    };
+    fetchBacktest();
+
+    return () => {
+      cancelled = true;
+      if (btTimer.current) clearTimeout(btTimer.current);
+    };
   }, []);
 
   const btBeats =
@@ -104,23 +128,23 @@ const Home = () => {
       : null;
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="iv-page min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-customBlack-100 pt-28 pb-20 text-white">
+      <section className="relative overflow-hidden bg-customBlack-100 pt-24 pb-16 text-white sm:pt-28 sm:pb-20">
         <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-customGreen-100/20 blur-3xl" />
         <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-customGreen-100/10 blur-3xl" />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 md:flex-row md:justify-between">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 sm:px-6 md:flex-row md:justify-between">
           <div className="max-w-xl">
             <span className="inline-block rounded-full bg-customGreen-100/15 px-4 py-1 text-sm font-semibold text-customGreen-100">
               Smart portfolio allocation
             </span>
-            <h1 className="mt-5 text-4xl font-extrabold leading-tight md:text-5xl">
+            <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
               Build an optimized stock portfolio in{" "}
               <span className="text-customGreen-100">seconds</span>.
             </h1>
-            <p className="mt-5 text-lg text-slate-300">
+            <p className="mt-5 text-base text-slate-300 sm:text-lg">
               Investify uses Modern Portfolio Theory and live market data to pick
               a diversified set of stocks and find the weights that give you the
               best return for the risk you're comfortable with.
@@ -163,10 +187,10 @@ const Home = () => {
       </section>
 
       {/* How it works */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold">How it works</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+          <h2 className="iv-heading text-2xl font-bold sm:text-3xl">How it works</h2>
+          <p className="mx-auto mt-3 max-w-2xl iv-muted">
             Under the hood it's the Markowitz mean-variance framework — select
             good stocks, then optimize their weights for the best risk-adjusted
             return.
@@ -179,8 +203,8 @@ const Home = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-customGreen-100/10 text-xl text-customGreen-100">
                 <Icon />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <h3 className="iv-heading mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed iv-muted">
                 {text}
               </p>
             </div>
@@ -189,12 +213,12 @@ const Home = () => {
       </section>
 
       {/* The math, briefly */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="iv-card grid gap-8 p-8 md:grid-cols-2 md:p-10">
+      <section className="iv-surface py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="iv-card grid gap-8 p-6 sm:p-8 md:grid-cols-2 md:p-10">
             <div>
-              <h2 className="text-2xl font-bold">The idea in one line</h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
+              <h2 className="iv-heading text-2xl font-bold">The idea in one line</h2>
+              <p className="mt-4 leading-relaxed iv-muted">
                 Every stock has a <strong>return</strong> and a{" "}
                 <strong>risk</strong> (how much its price swings). The{" "}
                 <strong>Sharpe ratio</strong> measures return earned per unit of
@@ -202,7 +226,7 @@ const Home = () => {
                 <em>whole portfolio</em> — so you're never just chasing returns,
                 you're chasing the <em>best return for your risk</em>.
               </p>
-              <p className="mt-4 leading-relaxed text-slate-600">
+              <p className="mt-4 leading-relaxed iv-muted">
                 Because stocks that move together add little diversification, we
                 also avoid picking highly-correlated names — spreading your money
                 across genuinely different bets.
@@ -228,10 +252,10 @@ const Home = () => {
       </section>
 
       {/* Under the hood */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold">What's running behind the scenes</h2>
-          <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+          <h2 className="iv-heading text-2xl font-bold sm:text-3xl">What's running behind the scenes</h2>
+          <p className="mx-auto mt-3 max-w-3xl iv-muted">
             No black-box, no opaque "trained model." Investify uses{" "}
             <strong>Modern Portfolio Theory</strong> (Harry Markowitz, 1952) — the
             same mean-variance optimization used across the finance industry.
@@ -270,7 +294,7 @@ const Home = () => {
           />
         </div>
 
-        <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-slate-500">
+        <p className="mx-auto mt-8 max-w-3xl text-center text-sm iv-muted">
           Earlier versions tried a machine-learning classifier to rank stocks, but
           it leaked its own target into its features (inflating accuracy without
           real skill), so we replaced it with this transparent, well-established
@@ -279,11 +303,11 @@ const Home = () => {
       </section>
 
       {/* Where the data comes from */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="iv-surface py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold">Where the data comes from</h2>
-            <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+            <h2 className="iv-heading text-2xl font-bold sm:text-3xl">Where the data comes from</h2>
+            <p className="mx-auto mt-3 max-w-3xl iv-muted">
               Everything is built on free, public market data — no paid feeds, no
               hidden sources. Here's exactly how it's pulled.
             </p>
@@ -294,10 +318,10 @@ const Home = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-customGreen-100/10 text-xl text-customGreen-100">
                 <FaCloudArrowDown />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">
+              <h3 className="iv-heading mt-4 text-lg font-semibold">
                 Source: Yahoo Finance via <code>yfinance</code>
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 text-sm leading-relaxed iv-muted">
                 We use the open-source <code>yfinance</code> Python library, which
                 reads from Yahoo Finance. A single batch call —{" "}
                 <code className="text-customGreen-100">
@@ -313,10 +337,10 @@ const Home = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-customGreen-100/10 text-xl text-customGreen-100">
                 <FaServer />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">
+              <h3 className="iv-heading mt-4 text-lg font-semibold">
                 Live, then cached for speed
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 text-sm leading-relaxed iv-muted">
                 Prices are pulled <strong>live</strong> and cached once per day,
                 so you always get the latest close without waiting on a download
                 every click. Company fundamentals (sector, P/E, market cap) come
@@ -330,12 +354,12 @@ const Home = () => {
       </section>
 
       {/* Markowitz, in our code */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold">
+          <h2 className="iv-heading text-2xl font-bold sm:text-3xl">
             Markowitz mean-variance optimization — in our code
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+          <p className="mx-auto mt-3 max-w-3xl iv-muted">
             We don't "train" a statistical model. We solve Harry Markowitz's
             mean-variance problem directly: given the selected stocks, find the
             weight mix on the <strong>efficient frontier</strong> with the highest
@@ -345,8 +369,8 @@ const Home = () => {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <div className="iv-card p-6">
-            <h3 className="text-lg font-semibold">The math</h3>
-            <ul className="mt-3 space-y-3 text-sm text-slate-600">
+            <h3 className="iv-heading text-lg font-semibold">The math</h3>
+            <ul className="mt-3 space-y-3 text-sm iv-muted">
               <li>
                 <strong>Expected returns</strong> μ = annualized mean of daily
                 returns for each stock.
@@ -388,7 +412,7 @@ minimize(neg_sharpe, w0,
           </div>
         </div>
 
-        <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-slate-500">
+        <p className="mx-auto mt-6 max-w-3xl text-center text-sm iv-muted">
           In code this lives in{" "}
           <code>_portfolio_statistics()</code> and{" "}
           <code>_optimize_max_sharpe()</code> — the optimizer iterates weight
@@ -397,11 +421,11 @@ minimize(neg_sharpe, w0,
       </section>
 
       {/* Two engines: deterministic vs machine learning */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="iv-surface py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold">Two engines, one app</h2>
-            <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+            <h2 className="iv-heading text-2xl font-bold sm:text-3xl">Two engines, one app</h2>
+            <p className="mx-auto mt-3 max-w-3xl iv-muted">
               Investify now runs <strong>two complementary methods</strong>. The
               original <strong>deterministic optimizer</strong> powers the
               Prediction &amp; Performance pages. A new{" "}
@@ -413,19 +437,19 @@ minimize(neg_sharpe, w0,
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {/* Deterministic engine */}
-            <div className="iv-card p-7">
+            <div className="iv-card p-5 sm:p-7">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-lg text-amber-600">
                   <FaScaleBalanced />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Deterministic engine</h3>
-                  <p className="text-xs font-medium text-slate-500">
+                  <h3 className="iv-heading text-lg font-semibold">Deterministic engine</h3>
+                  <p className="text-xs font-medium iv-muted">
                     Prediction &amp; Performance pages
                   </p>
                 </div>
               </div>
-              <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
+              <ul className="mt-5 space-y-2.5 text-sm iv-muted">
                 <li>• <strong>Method:</strong> Markowitz mean-variance optimization (MPT).</li>
                 <li>• <strong>Algorithm:</strong> SciPy SLSQP solver, max-Sharpe weights.</li>
                 <li>• <strong>Answers:</strong> "Given these stocks, what's the optimal mix <em>right now?</em>"</li>
@@ -447,11 +471,11 @@ minimize(neg_sharpe, w0,
                   <FaBrain />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Machine-learning strategy</h3>
-                  <p className="text-xs font-medium text-slate-500">Backtest page</p>
+                  <h3 className="iv-heading text-lg font-semibold">Machine-learning strategy</h3>
+                  <p className="text-xs font-medium iv-muted">Backtest page</p>
                 </div>
               </div>
-              <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
+              <ul className="mt-5 space-y-2.5 text-sm iv-muted">
                 <li>• <strong>Method:</strong> supervised learning that ranks stocks by predicted next-month return.</li>
                 <li>• <strong>Algorithm:</strong> Gradient Boosting (or Random Forest) regressor.</li>
                 <li>• <strong>Answers:</strong> "Which stocks will <em>outperform next month?</em>"</li>
@@ -470,7 +494,7 @@ minimize(neg_sharpe, w0,
       </section>
 
       {/* ML model + live out-of-sample performance */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="text-center">
           <span className="inline-block rounded-full bg-customGreen-100/15 px-4 py-1 text-sm font-semibold text-customGreen-100">
             ✨ Machine learning · out-of-sample
@@ -478,7 +502,7 @@ minimize(neg_sharpe, w0,
           <h2 className="mt-4 text-3xl font-bold">
             The ML model — and how it actually performs
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl text-slate-600">
+          <p className="mx-auto mt-3 max-w-3xl iv-muted">
             Everything an interviewer would ask about the model: what it is, what
             it learns from, how it's validated, and the real numbers it produced
             on data it never trained on.
@@ -491,8 +515,8 @@ minimize(neg_sharpe, w0,
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
               <FaRobot />
             </div>
-            <h3 className="mt-4 text-lg font-semibold">The model</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <h3 className="iv-heading mt-4 text-lg font-semibold">The model</h3>
+            <p className="mt-2 text-sm leading-relaxed iv-muted">
               A <strong>Gradient Boosting Regressor</strong> (scikit-learn) — an
               ensemble of shallow decision trees — predicts each stock's{" "}
               <strong>next-month return</strong>. A{" "}
@@ -504,8 +528,8 @@ minimize(neg_sharpe, w0,
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
               <FaCodeBranch />
             </div>
-            <h3 className="mt-4 text-lg font-semibold">The features (no leakage)</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <h3 className="iv-heading mt-4 text-lg font-semibold">The features (no leakage)</h3>
+            <p className="mt-2 text-sm leading-relaxed iv-muted">
               Six cross-sectional signals per stock, all from{" "}
               <em>past data only</em>: momentum over{" "}
               <strong>1, 3, 6 and 12 months</strong> and volatility over{" "}
@@ -517,8 +541,8 @@ minimize(neg_sharpe, w0,
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-customGreen-100/10 text-lg text-customGreen-100">
               <FaClockRotateLeft />
             </div>
-            <h3 className="mt-4 text-lg font-semibold">The validation</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <h3 className="iv-heading mt-4 text-lg font-semibold">The validation</h3>
+            <p className="mt-2 text-sm leading-relaxed iv-muted">
               <strong>Walk-forward</strong>: at every monthly rebalance the model
               is retrained only on periods whose outcomes are already known, then
               tested on the <em>next</em>, unseen month. This is the honest way to
@@ -528,40 +552,45 @@ minimize(neg_sharpe, w0,
         </div>
 
         {/* Live out-of-sample results */}
-        <div className="iv-card mt-6 p-7">
+        <div className="iv-card mt-6 p-5 sm:p-7">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="iv-heading text-lg font-semibold">
               Out-of-sample results
             </h3>
             {backtest && (
-              <span className="text-xs font-medium text-slate-500">
-                {backtest.n_periods} monthly rebalances · {backtest.start} →{" "}
-                {backtest.end} · {backtest.universe_size} stocks
+              <span className="text-xs font-medium iv-muted">
+                {backtest.n_periods} monthly rebalances ·{" "}
+                <span className="iv-nowrap">
+                  {formatDate(backtest.start)} → {formatDate(backtest.end)}
+                </span>{" "}
+                · {backtest.universe_size} stocks
               </span>
             )}
           </div>
 
           {btError ? (
-            <p className="mt-6 text-sm text-slate-500">
+            <p className="mt-6 text-sm iv-muted">
               Live backtest unavailable right now (start the Flask service to load
               it). See the <button onClick={() => navigate("/backtest")} className="font-semibold text-customGreen-100 hover:underline">Backtest page</button> for full results.
             </p>
           ) : !backtest ? (
-            <div className="mt-6 flex items-center gap-3 text-sm text-slate-500">
-              <div className="h-4 w-4 animate-spin rounded-full border-2 border-customGreen-100 border-t-transparent" />
-              Training walk-forward models on the full history — first load can take
-              ~90 seconds, then it's cached…
+            <div className="mt-4">
+              <ProgressLoader
+                label="Training walk-forward models"
+                progress={btProgress}
+                sub="Runs once on the server, then cached for the day."
+              />
             </div>
           ) : (
             <>
-              <div className="mt-3 rounded-xl bg-slate-50 p-4 text-sm text-slate-700">
+              <div className="mt-3 iv-surface-muted rounded-xl p-4 text-sm iv-muted">
                 Over {backtest.n_periods} out-of-sample months, the ML strategy
                 returned{" "}
-                <strong className="text-slate-900">
+                <strong className="iv-heading">
                   {fmtPct(backtest.strategy.total_return)}
                 </strong>{" "}
                 vs the Nifty 50's{" "}
-                <strong className="text-slate-900">
+                <strong className="iv-heading">
                   {fmtPct(backtest.benchmark.total_return)}
                 </strong>
                 {btBeats && btMultiple ? (
@@ -585,7 +614,7 @@ minimize(neg_sharpe, w0,
                 />
               </div>
 
-              <p className="mt-5 text-xs leading-relaxed text-slate-500">
+              <p className="mt-5 text-xs leading-relaxed iv-muted">
                 <strong>A note on "accuracy":</strong> this is a ranking/regression
                 model, so the honest scorecard isn't classification accuracy — it's
                 out-of-sample portfolio performance. <strong>Win rate</strong> (the
@@ -600,7 +629,7 @@ minimize(neg_sharpe, w0,
       </section>
 
       {/* User guide */}
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <section className="mx-auto max-w-4xl px-4 sm:px-6 py-16">
         <h2 className="text-center text-3xl font-bold">Quick start guide</h2>
         <ol className="mt-10 space-y-4">
           {guide.map((g, i) => (
@@ -608,7 +637,7 @@ minimize(neg_sharpe, w0,
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-customGreen-100 font-bold text-white">
                 {i + 1}
               </span>
-              <span className="pt-1 text-slate-700">{g}</span>
+              <span className="pt-1 iv-muted">{g}</span>
             </li>
           ))}
         </ol>
@@ -624,16 +653,20 @@ minimize(neg_sharpe, w0,
 
       {/* Current data coverage */}
       <section className="bg-customBlack-100 py-12 text-white">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="text-center">
-            <h2 className="text-2xl font-bold">Data we currently hold</h2>
+            <h2 className="text-2xl font-bold text-white">Data we currently hold</h2>
             <p className="mt-2 text-slate-400">
               Live snapshot of the dataset powering your portfolio right now.
             </p>
           </div>
           {meta && !meta.error ? (
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <CoverageStat label="Date range" value={`${meta.start} → ${meta.end}`} />
+              <CoverageStat
+                label="Date range"
+                value={`${formatDate(meta.start)} → ${formatDate(meta.end)}`}
+                wide
+              />
               <CoverageStat label="Trading days" value={meta.trading_days?.toLocaleString()} />
               <CoverageStat label="Stocks tracked" value={meta.tickers} />
               <CoverageStat label="Source" value={meta.source} />
@@ -654,22 +687,28 @@ minimize(neg_sharpe, w0,
         </div>
       </section>
 
-      <footer className="border-t border-slate-200 bg-white py-6 text-center text-sm text-slate-500">
+      <footer className="iv-surface border-t border-[color:var(--iv-border)] py-6 text-center text-sm iv-muted">
         Investify · Educational demo · Not investment advice.
       </footer>
     </div>
   );
 };
 
-const CoverageStat = ({ label, value }) => (
+const CoverageStat = ({ label, value, wide }) => (
   <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-    <div className="text-lg font-bold text-customGreen-100">{value ?? "—"}</div>
+    <div
+      className={`iv-nowrap font-bold text-customGreen-100 ${
+        wide ? "text-sm sm:text-base" : "text-lg"
+      }`}
+    >
+      {value ?? "—"}
+    </div>
     <div className="mt-1 text-sm text-slate-400">{label}</div>
   </div>
 );
 
 const PerfBlock = ({ title, m, accent, highlight }) => (
-  <div className={`rounded-2xl border p-5 ${highlight ? "border-customGreen-100/30 bg-customGreen-100/5" : "border-slate-200 bg-white"}`}>
+  <div className={`rounded-2xl border p-5 ${highlight ? "border-customGreen-100/30 bg-customGreen-100/5" : "border-[color:var(--iv-border)] iv-surface"}`}>
     <p className={`text-sm font-semibold ${accent}`}>{title}</p>
     <div className="mt-3 grid grid-cols-3 gap-3 text-center">
       <PerfStat label="Total" value={fmtPct(m.total_return)} />
@@ -684,23 +723,23 @@ const PerfBlock = ({ title, m, accent, highlight }) => (
 
 const PerfStat = ({ label, value, negative }) => (
   <div>
-    <p className={`text-base font-bold ${negative ? "text-red-500" : "text-slate-900"}`}>
+    <p className={`text-base font-bold ${negative ? "text-red-500" : "iv-heading"}`}>
       {value}
     </p>
-    <p className="mt-0.5 text-[11px] text-slate-500">{label}</p>
+    <p className="mt-0.5 text-[11px] iv-muted">{label}</p>
   </div>
 );
 
 const TechRow = ({ step, formula, detail }) => (
   <div className="iv-card p-6">
     <div className="flex flex-col gap-2">
-      <h3 className="text-lg font-semibold text-slate-900">{step}</h3>
+      <h3 className="iv-heading text-lg font-semibold">{step}</h3>
       {formula && (
         <code className="block overflow-x-auto rounded-lg bg-slate-900 px-4 py-3 text-sm text-customGreen-100">
           {formula}
         </code>
       )}
-      <p className="text-sm leading-relaxed text-slate-600">{detail}</p>
+      <p className="text-sm leading-relaxed iv-muted">{detail}</p>
     </div>
   </div>
 );
