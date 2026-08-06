@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-customBlack-100/95 text-white shadow-lg backdrop-blur">
+    <header className="iv-band fixed top-0 left-0 z-50 w-full text-white shadow-lg backdrop-blur">
       <div className="flex h-16 items-center justify-between px-4 sm:px-6">
         <button
           className="flex cursor-pointer items-center gap-2 text-xl font-extrabold tracking-tight transition-colors hover:text-customGreen-100 sm:text-2xl"
@@ -89,7 +89,7 @@ const Navbar = () => {
           open ? "max-h-80" : "max-h-0"
         }`}
       >
-        <nav className="flex flex-col gap-1 bg-customBlack-100 px-4 py-3">
+        <nav className="iv-band flex flex-col gap-1 px-4 py-3">
           {links.map(({ label, path }) => {
             const active = location.pathname === path;
             return (

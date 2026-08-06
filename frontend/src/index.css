@@ -16,6 +16,8 @@
   --iv-text-muted: #475569;
   --iv-text-subtle: #94a3b8;
   --iv-shadow: 15 23 42;
+  /* Inverted band (navbar, hero, stat strip). Dark by design in light mode. */
+  --iv-band: #212426;
 }
 
 html.dark {
@@ -27,6 +29,9 @@ html.dark {
   --iv-text-muted: #a3aec6;
   --iv-text-subtle: #7b87a3;
   --iv-shadow: 0 0 0;
+  /* In dark mode the neutral grey clashed with the navy page; use a surface
+     from the same family so the band reads as elevation, not a stray patch. */
+  --iv-band: #172038;
 }
 
 /* Reserve the scrollbar gutter so navigating between pages with/without a
@@ -89,6 +94,11 @@ code {
 .iv-subtle {
   color: var(--iv-text-subtle);
 }
+/* Inverted band — always light text, background follows the theme. */
+.iv-band {
+  background-color: var(--iv-band);
+}
+
 .iv-surface {
   background-color: var(--iv-surface);
 }

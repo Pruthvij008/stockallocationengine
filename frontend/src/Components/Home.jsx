@@ -132,7 +132,7 @@ const Home = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-customBlack-100 pt-24 pb-16 text-white sm:pt-28 sm:pb-20">
+      <section className="iv-band relative overflow-hidden pt-24 pb-16 text-white sm:pt-28 sm:pb-20">
         <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-customGreen-100/20 blur-3xl" />
         <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-customGreen-100/10 blur-3xl" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 sm:px-6 md:flex-row md:justify-between">
@@ -652,7 +652,7 @@ minimize(neg_sharpe, w0,
       </section>
 
       {/* Current data coverage */}
-      <section className="bg-customBlack-100 py-12 text-white">
+      <section className="iv-band py-12 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white">Data we currently hold</h2>

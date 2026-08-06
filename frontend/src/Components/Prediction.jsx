@@ -433,12 +433,19 @@ const Prediction = () => {
                   {Object.entries(predictionData.stock_info).map(
                     ([ticker, info]) => (
                       <div key={ticker} className="iv-card iv-card-hover p-5">
-                        <div className="flex items-center justify-between">
-                          <h4 className="text-base font-bold iv-heading">
-                            {ticker.replace(".NS", "")}
-                          </h4>
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <h4 className="text-base font-bold iv-heading">
+                              {ticker.replace(".NS", "")}
+                            </h4>
+                            {info.Name && (
+                              <p className="iv-subtle truncate text-xs">
+                                {info.Name}
+                              </p>
+                            )}
+                          </div>
                           {info.Sector && (
-                            <span className="rounded-full bg-customGreen-100/10 px-2 py-0.5 text-xs font-medium text-customGreen-100">
+                            <span className="shrink-0 rounded-full bg-customGreen-100/10 px-2 py-0.5 text-xs font-medium text-customGreen-100">
                               {info.Sector}
                             </span>
                           )}
@@ -459,6 +466,12 @@ const Prediction = () => {
                             v={formatNum(info.Divident_Yield)}
                           />
                         </dl>
+                        {info.source === "snapshot" && info.as_of && (
+                          <p className="iv-subtle mt-3 text-[11px]">
+                            Fundamentals as of {formatDate(info.as_of)} — the live
+                            feed blocks requests from hosted servers.
+                          </p>
+                        )}
                       </div>
                     )
                   )}

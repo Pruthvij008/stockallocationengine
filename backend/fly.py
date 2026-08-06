@@ -1,4 +1,5 @@
 import datetime
+import json
 import os
 
 from flask import Flask, request, jsonify
@@ -137,9 +138,32 @@ def _optimize_max_sharpe(ret):
     return result.x, mean_returns, cov_matrix
 
 
+def _load_reference():
+    """Bundled company fundamentals, used when the live lookup returns nothing.
+
+    Yahoo's `.info` endpoint refuses requests from datacenter IPs, so on a
+    hosted box every field comes back empty and the UI shows blank cards. The
+    committed snapshot (see build_reference.py) keeps it populated.
+    """
+    try:
+        with open("stock_reference.json", encoding="utf-8") as fh:
+            payload = json.load(fh)
+        return payload.get("data", {}), payload.get("captured")
+    except Exception as exc:
+        print(f"No bundled reference data: {exc}")
+        return {}, None
+
+
+_REFERENCE, _REFERENCE_DATE = _load_reference()
+
+
 def _fetch_stock_info(tickers):
-    """Fundamentals for each ticker. Yahoo's `.info` is flaky, so a failure for
-    one ticker must not break the whole prediction."""
+    """Fundamentals for each ticker, live where possible.
+
+    Falls back to the bundled snapshot per-field, so a blocked or flaky live
+    lookup degrades to slightly stale data rather than to nothing. Each entry
+    reports which source it came from.
+    """
     stock_info = {}
     for ticker in tickers:
         try:
@@ -147,13 +171,24 @@ def _fetch_stock_info(tickers):
         except Exception as exc:
             print(f"Could not fetch info for {ticker}: {exc}")
             info = {}
+
+        ref = _REFERENCE.get(ticker, {})
+        live_worked = bool(info.get("sector") or info.get("marketCap"))
+
+        def pick(live_key, ref_key):
+            value = info.get(live_key)
+            return value if value not in (None, "") else ref.get(ref_key)
+
         stock_info[ticker] = {
-            "Sector": info.get("sector"),
-            "Industry": info.get("industry"),
-            "Summary": info.get("longBusinessSummary"),
-            "Market_Cap": info.get("marketCap"),
-            "PE_Ratio": info.get("trailingPE"),
-            "Divident_Yield": info.get("dividendYield"),
+            "Name": ref.get("Name"),
+            "Sector": pick("sector", "Sector"),
+            "Industry": pick("industry", "Industry"),
+            "Summary": pick("longBusinessSummary", "Summary"),
+            "Market_Cap": pick("marketCap", "Market_Cap"),
+            "PE_Ratio": pick("trailingPE", "PE_Ratio"),
+            "Divident_Yield": pick("dividendYield", "Divident_Yield"),
+            "source": "live" if live_worked else ("snapshot" if ref else "unavailable"),
+            "as_of": None if live_worked else _REFERENCE_DATE,
         }
     return stock_info
 

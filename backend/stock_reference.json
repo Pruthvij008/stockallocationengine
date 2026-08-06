@@ -1,0 +1,1248 @@
+{
+ "captured": "2026-08-06",
+ "source": "Yahoo Finance via yfinance",
+ "data": {
+  "ABB.NS": {
+   "Name": "ABB India Limited",
+   "Sector": "Industrials",
+   "Industry": "Specialty Industrial Machinery",
+   "Summary": "ABB India Limited develops and sells products and system solutions to utilities, industries, channel partners, and original equipment manufacturers in India and internationally. It operates through Motion, Robotics and Discrete Automation, Electrification, and Process Automation segments. The Motion segment offers motors, generators, and drives that provide power, motion, and control for a range of automation applications; as well as solutions and related services. Its Robotics and Discrete Automation segment provides value-added solutions in robotics, machine, and factory automation. The Elec",
+   "Market_Cap": 1639111196672,
+   "PE_Ratio": 103.68633,
+   "Divident_Yield": 0.51
+  },
+  "ABFRL.NS": {
+   "Name": "Aditya Birla Fashion and Retail Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Apparel Manufacturing",
+   "Summary": "Aditya Birla Fashion and Retail Limited manufactures, distributes, and retails fashion apparel and accessories in India and internationally. It operates in Pantaloons and Ethnic & Others segments. The company offers shirts, trousers, denims, t-shirts, dresses, suits and blazers, casuals, ceremonial, and party wear; shorts, joggers, track pants, sweatshirts, jackets, polos, chinos, kurtas and bottom wear, occasion wear, festive ensembles, classic shirts, logo T-shirts, casual pants, lehengas and kurta sets, innerwear, athleisure wear, workwear, tops, sleepwear, crops tops, skirts, jeans, and sp",
+   "Market_Cap": 76973326336,
+   "PE_Ratio": null,
+   "Divident_Yield": null
+  },
+  "ADANIENT.NS": {
+   "Name": "Adani Enterprises Limited",
+   "Sector": "Energy",
+   "Industry": "Thermal Coal",
+   "Summary": "Adani Enterprises Limited, together with its subsidiaries, operates in the new energy ecosystem, data center, airports, roads, copper and PVC, and other sectors in India and internationally. It operates through the Integrated Resources Management (IRM), Mining Services, Commercial Mining, New Energy Ecosystem, Airport, Road, copper, and Others segments. The company engages in the integrated ecosystem for manufacturing green hydrogen, including solar cells, modules, and wind turbine generators; construction, operation, and maintenance of airports and road assets; commercial mining activities; s",
+   "Market_Cap": 4305917575168,
+   "PE_Ratio": 52.48916,
+   "Divident_Yield": 0.04
+  },
+  "ADANIGREEN.NS": {
+   "Name": "Adani Green Energy Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Renewable",
+   "Summary": "Adani Green Energy Limited generates and supplies renewable energy to central and state government entities and government backed corporations in India. The company develops, builds, owns, operates, and maintains power plants through renewable sources, such as solar, wind, and hybrid. It operates solar power plants with an operational capacity of 10,103 megawatts (MW); wind power plants with an operational capacity of 2,140 MW; and hybrid power plants with an operational capacity of 2,140 MW. Adani Green Energy Limited was incorporated in 2015 and is headquartered in Ahmedabad, India.",
+   "Market_Cap": 2259102203904,
+   "PE_Ratio": 130.74356,
+   "Divident_Yield": null
+  },
+  "ADANIPORTS.NS": {
+   "Name": "Adani Ports and Special Economic Zone Limited",
+   "Sector": "Industrials",
+   "Industry": "Marine Shipping",
+   "Summary": "Adani Ports and Special Economic Zone Limited, together with its subsidiaries, develops, operates, and maintains port infrastructure in India and internationally. The company is involved in the operation of ports and terminals, including bulk and break bulk, container, liquid, dry bulk, general, LPG/LNG, and crude cargo; terminal and ports related infrastructure development activities; and development of infrastructure at contiguous Special Economic Zone at Mundra. It also offers logistic services, which include logistic parks, container rail and bulk cargo logistic solutions, and warehousing,",
+   "Market_Cap": 3905210548224,
+   "PE_Ratio": 28.900255,
+   "Divident_Yield": 0.44
+  },
+  "ADANIPOWER.NS": {
+   "Name": "Adani Power Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Independent Power Producers",
+   "Summary": "Adani Power Limited engages in the generation, transmission, and sale of electricity under long term power purchase agreements (PPAs), supplemental PPAs, medium and short term PPAs, and on merchant basis in India. The company generates electricity through thermal energy sources through various power projects with a combined installed and commissioned capacity of 18,150 megawatt (MW). It also operates various coal based power plants comprising 4,620 MW at Mundra, Gujarat; 3,300 MW at Tiroda, Maharashtra; 1,320 MW at Kawai, Rajasthan; 1,200 MW at Udupi, Karnataka; 600 MW at Raigarh and Korba, Ch",
+   "Market_Cap": 4013530546176,
+   "PE_Ratio": 28.162382,
+   "Divident_Yield": null
+  },
+  "ALKEM.NS": {
+   "Name": "Alkem Laboratories Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Alkem Laboratories Limited, a pharmaceutical company, engages in the research and development, manufacture, and sale of pharmaceutical and nutraceutical products in India, the United States, and internationally. The company offers biosimilars, active pharmaceutical ingredients, branded and trade generics, complex generics, and consumer wellness products in therapeutic areas comprising anti  infective, anti-osteoporosis, cardiology, neurology, dermatology, diabetology, gastroenterology, gynecology, oncology, ophthalmology, respiratory, rheumatology, central nervous system, anti-diabetic, iron ",
+   "Market_Cap": 669265100800,
+   "PE_Ratio": 29.071882,
+   "Divident_Yield": 0.35
+  },
+  "AMBUJACEM.NS": {
+   "Name": "Ambuja Cements Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Building Materials",
+   "Summary": "Ambuja Cements Limited, together with its subsidiaries, manufactures, markets, and sells cement and related products to individual home builders, developers, institutional clients, masons, contractors, architects, and construction professionals in India. The company operates through Cement and Ready Mix Concrete segments. It offers Adani Ambuja Kawach, a water-repellent cement; Adani Ambuja Plus, a special cement for stronger, denser, and leak-proof concrete; Adani Ambuja cement; Adani Ambuja Compocem, a slag and silicate enriched composite cement; and Adani Ambuja cool walls, a thermally insu",
+   "Market_Cap": 1084622700544,
+   "PE_Ratio": 24.46749,
+   "Divident_Yield": 0.45
+  },
+  "APOLLOHOSP.NS": {
+   "Name": "Apollo Hospitals Enterprise Limited",
+   "Sector": "Healthcare",
+   "Industry": "Medical Care Facilities",
+   "Summary": "Apollo Hospitals Enterprise Limited, together with its subsidiaries, provides healthcare services in India. It operates through Healthcare Services, Retail Health & Diagnostics, Digital Health & Pharmacy Distribution, and Others segments. The company's healthcare facilities comprise primary, secondary, and tertiary care, as well as specialty facilities. It offers services in cardiac sciences, oncology, neurosciences, gastroenterology, orthopedics, urology, organ transplantation, pulmonology, obstetrics and gynecology, internal medicine, vascular surgery, pediatrics, cosmetology, emergency medi",
+   "Market_Cap": 1290395451392,
+   "PE_Ratio": 66.70507,
+   "Divident_Yield": 0.22
+  },
+  "ASHOKLEY.NS": {
+   "Name": "Ashok Leyland Limited",
+   "Sector": "Industrials",
+   "Industry": "Farm & Heavy Construction Machinery",
+   "Summary": "Ashok Leyland Limited, together with its subsidiaries, manufactures and sells commercial vehicles in India. It operates in Commercial Vehicle and Financial Service segments. The company offers ICV trucks, haulage vehicles, tractors, and tippers; buses; light commercial vehicle goods carriers and passenger vehicles, and small commercial vehicle goods carriers; defense vehicles, such as armored, high mobility, specialist, and logistics vehicles; transit mixers for use in construction and mining operations; and tanker trucks, reefers, ambulances, and other custom-built vehicles. It also provides ",
+   "Market_Cap": 1042609143808,
+   "PE_Ratio": 30.033842,
+   "Divident_Yield": 1.98
+  },
+  "ASIANPAINT.NS": {
+   "Name": "Asian Paints Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Specialty Chemicals",
+   "Summary": "Asian Paints Limited, together with its subsidiaries, engages in the manufacture, distribution, and sale of paints, coatings, and products related to home decoration and bath fittings, kitchen, and wardrobe in India, Asia, the Middle East, Africa, and the South Pacific region. The company offers wall coverings, waterproofing products, adhesives; and bath fittings and sanitaryware, modular kitchens and wardrobes, fabric, furnishings, rugs, decorative lightings, unplasticized polyvinyl chloride windows and door systems, furniture, textures and painting aids, and mechanized tools. It also provide",
+   "Market_Cap": 2641064886272,
+   "PE_Ratio": 55.45491,
+   "Divident_Yield": 1.0
+  },
+  "ASTRAL.NS": {
+   "Name": "Astral Limited",
+   "Sector": "Industrials",
+   "Industry": "Building Products & Equipment",
+   "Summary": "Astral Limited engages in the manufacture and marketing of pipes and fittings, water tanks, and adhesives and sealants in India and internationally. The company operates in two segments, Plumbing, and Paints and Adhesives. It offers plumbing pipes and fittings, sewerage and drainage pipes and fittings, agriculture pipes and fittings, cable protection system, industrial piping system, fire protection system, urban infrastructure, ancillary products, and column pipe; and roto moulding, blow moulded, loft, and anti-viral copper shield water tanks. It also provides bathware products comprising fau",
+   "Market_Cap": 387393552384,
+   "PE_Ratio": 72.31695,
+   "Divident_Yield": 0.28
+  },
+  "AUBANK.NS": {
+   "Name": "AU Small Finance Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "AU Small Finance Bank Limited offers various banking and financial services in India. The company operates through Treasury, Retail Banking, Wholesale Banking, and Other Banking Operations segments. It provides saving, salary, term, current, escrow, trade, fixed deposit overdraft, nodal and RERA, and fixed and recurring deposit accounts; foreign currency non-resident deposit; debit, credit, and prepaid cards; and safe deposit locker services. The company also offers vehicle loans for cars, two-wheelers, tractors, and commercial vehicles, as well as construction equipment; personal, home, comme",
+   "Market_Cap": 814245216256,
+   "PE_Ratio": 28.818228,
+   "Divident_Yield": 0.1
+  },
+  "AUROPHARMA.NS": {
+   "Name": "Aurobindo Pharma Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Aurobindo Pharma Limited, a pharmaceutical company, develops, manufactures, and commercializes generic pharmaceuticals in India, the United States, Europe, and internationally. The company manufactures a range of finished formulation products in various forms, such as oral solids, liquids, injectables for generic pharmaceuticals, branded specialty pharmaceuticals, and active pharmaceutical ingredients for CNS, anti-retroviral, cardiovascular, antibiotics, gastroenterology, anti-diabetics, and anti-allergic therapeutic areas. It also provides ointments, creams, gels, powders, transdermal, and l",
+   "Market_Cap": 914217959424,
+   "PE_Ratio": 26.332449,
+   "Divident_Yield": 0.25
+  },
+  "AXISBANK.NS": {
+   "Name": "Axis Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Axis Bank Limited provides various financial products and services in India and internationally. The company operates through four segments: Treasury, Retail Banking, Corporate/Wholesale Banking, and Other Banking Business. It provides fixed, recurring, and safe deposits; and saving, salary, current, safe custody, pension disbursement, and demat and trading accounts. The company also offers home, personal, car, two-wheeler, business, commercial vehicle construction equipment, education, gold loans, as well as loans against securities, fixed deposits, properties, and credit cards. In addition, ",
+   "Market_Cap": 3908231757824,
+   "PE_Ratio": 14.126644,
+   "Divident_Yield": 0.08
+  },
+  "BAJAJFINSV.NS": {
+   "Name": "Bajaj Finserv Ltd.",
+   "Sector": "Financial Services",
+   "Industry": "Financial Conglomerates",
+   "Summary": "Bajaj Finserv Ltd., through its subsidiaries, provides financial services in India. The company operates through Life Insurance, General Insurance, Windmill, Retail Financing, and Investments and Others segments. It offers personal, home, business, gold, loan for doctors and lawyers; loan against properties, securities, car, fixed deposit, insurance policy, mutual funds, and shares; unsecured and secured loans to small and medium-sized enterprises; two- and three-wheeler loans; used car and tractor loan; financing for products, such as consumer electronics, digital, furniture, e-commerce purch",
+   "Market_Cap": 3338110500864,
+   "PE_Ratio": 33.063877,
+   "Divident_Yield": 0.06
+  },
+  "BAJAJHLDNG.NS": {
+   "Name": "Bajaj Holdings & Investment Limited",
+   "Sector": "Financial Services",
+   "Industry": "Asset Management",
+   "Summary": "Bajaj Holdings & Investment Limited, an investment holding company, operates as a non-banking financial-investment and credit company in India. It invests in listed and unlisted securities of companies. Bajaj Holdings & Investment Limited was incorporated in 1945 and is headquartered in Pune, India.",
+   "Market_Cap": 1267299254272,
+   "PE_Ratio": 14.313908,
+   "Divident_Yield": 1.39
+  },
+  "BAJFINANCE.NS": {
+   "Name": "Bajaj Finance Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Bajaj Finance Limited operates as a deposit-taking non-banking financial company in India. The company offers financing for various products, such as consumer electronics, furniture, digital products, lifestyle products, lifecare services, e-commerce purchases, retail spends, and two and three-wheelers; and personal, unsecured, home, secured, gold, and car loans. It also provides secured and unsecured loans to micro, small, and medium enterprises; loans against property, mutual funds, insurance policies, and shares; developer finance and lease rental discounting services; commercial vehicle fi",
+   "Market_Cap": 7121701699584,
+   "PE_Ratio": 35.159706,
+   "Divident_Yield": 0.47
+  },
+  "BALKRISIND.NS": {
+   "Name": "Balkrishna Industries Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Parts",
+   "Summary": "Balkrishna Industries Limited manufactures and sells tires in India, Europe, North America, and internationally. It provides manufacturing and selling of off-highway tires OHT for use in various applications, such as agricultural, mining, forestry, construction, industrial, earthmoving, port, all-terrain vehicle ATV, and turf care applications. The company was incorporated in 1961 and is headquartered in Mumbai, India.",
+   "Market_Cap": 476662169600,
+   "PE_Ratio": 33.869503,
+   "Divident_Yield": 0.75
+  },
+  "BANDHANBNK.NS": {
+   "Name": "Bandhan Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Bandhan Bank Limited provides banking and financial services for personal and business customers in India. The company operates through Treasury, Retail Banking, Corporate/Wholesale Banking, and Other Banking Business segments. It accepts term, fixed, and recurring deposits; and offers savings and current accounts. The company also provides home, gold, personal, two-wheeler, and car loans; loans against property; loan/overdraft against term deposits; and loans for small, medium, and large businesses. In addition, it invests in sovereign securities; offers liability products, card services, int",
+   "Market_Cap": 281390907392,
+   "PE_Ratio": 20.81764,
+   "Divident_Yield": 0.88
+  },
+  "BANKBARODA.NS": {
+   "Name": "Bank of Baroda Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Bank of Baroda Limited provides various banking products and services to individuals, government departments, and corporate customers in India and internationally. It operates through Treasury, Wholesale Banking, Retail Banking, and Other Banking Operations segments. The company offers savings, salary, and current accounts; and fixed and recurring deposits. It also provides loans, including home, vehicle, digital, personal, education, gold, mortgage, and other loans, as well as Baroda Yoddha loans for defense personnel and fintech credit; loans and advances for corporate, agriculture, and micr",
+   "Market_Cap": 1298011914240,
+   "PE_Ratio": 7.146925,
+   "Divident_Yield": 3.46
+  },
+  "BATAINDIA.NS": {
+   "Name": "Bata India Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Footwear & Accessories",
+   "Summary": "Bata India Limited manufactures, sells, and trades in footwear and accessories through its retail and wholesale network in India and internationally. It offers men's footwear, including casual shoes, slippers and flipflops, as well as ethnic, formal, loafers, sandals, sneakers, sports, and outdoor shoes. The company also offers women's footwear, such as ballerinas, boots, casual, flats, flipflop, loafers, mule, sandals, sneakers, sports, thongs, and toe ring shoes, as well as heel footwear. It is also involved in kids' footwear; apparel, including joggers and bottoms, shorts, t-shirt, and Polo",
+   "Market_Cap": 93580894208,
+   "PE_Ratio": 69.74138,
+   "Divident_Yield": 1.23
+  },
+  "BEL.NS": {
+   "Name": "Bharat Electronics Limited",
+   "Sector": "Industrials",
+   "Industry": "Aerospace & Defense",
+   "Summary": "Bharat Electronics Limited designs, manufactures, and supplies electronic equipment and systems for the defense and civilian markets in India. The company's defense products include defense communication products, land-based radars, naval systems, electronic warfare systems, avionics, electro optics, tank and armored fighting vehicle electronic systems, weapon systems, C4I systems, upgrades, shelters and masts, simulators, batteries, components and devices, fuzes and unmanned systems; microwave tubes and power modules, microwave super components, digital multichannel data recorders, and hybrid",
+   "Market_Cap": 2918063800320,
+   "PE_Ratio": 47.580452,
+   "Divident_Yield": 0.64
+  },
+  "BERGEPAINT.NS": {
+   "Name": "Berger Paints India Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Specialty Chemicals",
+   "Summary": "Berger Paints India Limited manufactures and sells paints in India and internationally. The company offers interior wall coatings, including designer finishes, interior emulsions, and ceiling paints; exterior wall coatings comprising exterior emulsions and textures, and roof and floor coatings; putty and cement paints; solvent, interior, exterior, metal, and wood primers; enamels; wood finishes; waterproofing solutions; and tiling solutions. It also provides acrylic, silicate, and mineral plasters; thermal insulation adhesives; mortars; ready to use coat, wood effect, ribbed effect, concrete e",
+   "Market_Cap": 626843058176,
+   "PE_Ratio": 55.709843,
+   "Divident_Yield": 0.73
+  },
+  "BHARTIARTL.NS": {
+   "Name": "Bharti Airtel Limited",
+   "Sector": "Communication Services",
+   "Industry": "Telecom Services",
+   "Summary": "Bharti Airtel Limited operates as a telecommunications company in India and internationally. It operates through the Mobile Services India, Mobile Services Africa, Mobile Services South Asia, Airtel Business, Passive Tower Infrastructure Services, Homes Services, Digital TV Services, and Others segments. The company provides voice and data telecom services through wireless technology including 2G/3G/4G/5G services; passive infrastructure service, including the setup, operation, and maintenance of wireless communication towers; mobile money services; home services covering voice and data commun",
+   "Market_Cap": 12152905662464,
+   "PE_Ratio": 43.933243,
+   "Divident_Yield": 1.21
+  },
+  "BOSCHLTD.NS": {
+   "Name": "Bosch Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Parts",
+   "Summary": "Bosch Limited engages in the manufacture and trading of automotive products in India. It operates through Automotive Products, Consumer Goods, and Others segments. The company offers products, such as spark and glow plugs; ignition coil; nozzle holder, components, and fuel rail assembly; LAG, SAG, rotary drill, hammer, and marble cutter; impact drilling machine; fuel injection pump and components; blower; and machines and components. It also provides diesel and gasoline fuel injection systems; automotive aftermarket products; industrial equipment; electrical power tools; security systems; and ",
+   "Market_Cap": 1238836183040,
+   "PE_Ratio": 44.683228,
+   "Divident_Yield": 0.63
+  },
+  "BPCL.NS": {
+   "Name": "Bharat Petroleum Corporation Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Refining & Marketing",
+   "Summary": "Bharat Petroleum Corporation Limited engages in refining crude oil and marketing petroleum products in India and internationally. It operates through two segments, Downstream Petroleum; and Exploration and Production of Hydrocarbons. The company operates fuel stations that sell motor spirits, high-speed diesel, compressed and liquefied natural gas, automotive liquefied petroleum gas (LPG), and lubricants; operate convenience stores, restaurants, and electric vehicle charging facilities; and offer ATM, money transfer, insurance, and vehicle care services. It also provides LPG for domestic, comm",
+   "Market_Cap": 1383035830272,
+   "PE_Ratio": 8.07232,
+   "Divident_Yield": 6.13
+  },
+  "BRITANNIA.NS": {
+   "Name": "Britannia Industries Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Packaged Foods",
+   "Summary": "Britannia Industries Limited engages in manufacturing, trading, and sale of various food products in India and internationally. The company offers biscuits under the Good Day, Marie Gold, NutriChoice, Milk Bikis, Tiger, 50-50, Jim Jam, Britannia Bourbon, Little Hearts, Treat, Pure Magic, Nice Time, and Biscafe brand names; cakes under the Muffills, Fudge It, Gobbles, Layerz, Tiffin Fun, Rollyo, and Nut & Raisin Romance Cake brand names; rusks under the Toastea brand; snacks under the Treat Croissant, Treat Creme Wafers; and Snacks under Time Pass brand name. It also offers dairy products, such",
+   "Market_Cap": 1301652176896,
+   "PE_Ratio": 51.47157,
+   "Divident_Yield": 1.66
+  },
+  "CANBK.NS": {
+   "Name": "Canara Bank",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Canara Bank provides various banking products and services in India and internationally. The company offers deposits and accounts, such as savings accounts, current accounts, recurring deposits, and term deposits; unclaimed deposits; loan products, including home, vehicle, education, personal, mortgage, gold, MSME, agri, and solar loans; life, general, and health insurance products; corporate loans comprising working capital, infrastructure, and export finance products, as well as term loans; depository services, merchant banking, and online trading services; and mutual funds. The company also",
+   "Market_Cap": 1194604756992,
+   "PE_Ratio": 6.0136986,
+   "Divident_Yield": 3.26
+  },
+  "CANFINHOME.NS": {
+   "Name": "Can Fin Homes Limited",
+   "Sector": "Financial Services",
+   "Industry": "Mortgage Finance",
+   "Summary": "Can Fin Homes Limited provides housing finance services primarily to first-time homebuyers and professionals in India. The company's products portfolio comprises housing loans, such as individual housing, commercial housing, composite housing, Composite housing loans. Layout loan, Flat under Construction TPA Basis, IHL Cash Salary, and affordable housing loans; non-housing loans, including site, mortgage, builder, line of credit, personal, CFHL top-up, I-secure loans, loans against rent receivables, loans for commercial properties and children education, Flexi LAP, loan for pensioners, and roo",
+   "Market_Cap": 107622195200,
+   "PE_Ratio": 9.53125,
+   "Divident_Yield": 1.97
+  },
+  "CHOLAFIN.NS": {
+   "Name": "Cholamandalam Investment and Finance Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Cholamandalam Investment and Finance Company Limited, operates as a non-banking finance company in India. The company operates through Vehicle Finance, Loan Against Property, Home Loans, and Other Loans segments. It offers loans for commercial vehicles, passenger vehicle, two- and three- wheelers, and tractors and farm equipment, as well as construction equipment. The company also provides secured loans against property, and home and SME loans, as well as consumer and small enterprise loans, including personal loans, professional loans, and business loans to salaried, self-employed professiona",
+   "Market_Cap": 1656785338368,
+   "PE_Ratio": 28.664303,
+   "Divident_Yield": 0.07
+  },
+  "CIPLA.NS": {
+   "Name": "Cipla Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Cipla Limited, together with its subsidiaries, manufactures, develops, sells, and distributes pharmaceutical products in India, the United States, South Africa, and internationally. It offers generic and branded generic medicines, vaccines, active pharmaceutical ingredients, and formulations for various therapeutic areas, such as MI, angina, heart disease, pulmonary disease, kidney disorders, alzheimer's disease, hypertension, arrhythmia, lipid abnormalities and diabetes, obesity, central nervous system, HIV/AIDS, respiratory, asthma, urology, oncology, cardio-metabolism, child health, infecti",
+   "Market_Cap": 1193199140864,
+   "PE_Ratio": 35.3942,
+   "Divident_Yield": 0.89
+  },
+  "COALINDIA.NS": {
+   "Name": "Coal India Limited",
+   "Sector": "Energy",
+   "Industry": "Thermal Coal",
+   "Summary": "Coal India Limited, together with its subsidiaries, produces and sells coal and coal products in India. The company offers coking coal for steel making and metallurgical industries, as well as for hard coke manufacturing; semi coking coal for blend-able coal in steel making, merchant coke manufacturing, and other metallurgical industries; and non-coking coal for thermal grade coal for cement, fertilizer, glass, ceramic, paper, chemical, and brick manufacturing, as well as power generation and other heating purposes. It also provides washed and beneficiated coal for manufacturing of hard coke f",
+   "Market_Cap": 2561229979648,
+   "PE_Ratio": 8.218311,
+   "Divident_Yield": 5.05
+  },
+  "COFORGE.NS": {
+   "Name": "Coforge Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Coforge Limited provides information technology (IT) and IT-enabled services in India, the Americas, Europe, the Middle East and Africa, India, and the Asia Pacific. The company offers Artificial intelligence services and platforms; and AI (artificial intelligence) and ML (machine learning) services, including predictive analytics, model risk management, and recommendation engine; intelligent automation solutions, such as enterprise and intelligent process automation, and smart application; data analytics solutions, such as data migration, cloud data engineering, master and meta data managemen",
+   "Market_Cap": 784802316288,
+   "PE_Ratio": 36.275837,
+   "Divident_Yield": 0.9
+  },
+  "COLPAL.NS": {
+   "Name": "Colgate-Palmolive (India) Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Household & Personal Products",
+   "Summary": "Colgate-Palmolive (India) Limited manufactures and trades in personal and oral care products in India. The company offers toothpastes, toothpowder, toothbrushes, mouth wash, serum, rinses, whitening products, hand washes, and shower gels under the Colgate and Palmolive brand name. It also offers soaps, cosmetics, and toiletries. In addition, the company exports its products. Colgate-Palmolive (India) Limited was incorporated in 1937 and is headquartered in Mumbai, India.",
+   "Market_Cap": 551695679488,
+   "PE_Ratio": 40.91991,
+   "Divident_Yield": 2.35
+  },
+  "CONCOR.NS": {
+   "Name": "Container Corporation of India Limited",
+   "Sector": "Industrials",
+   "Industry": "Railroads",
+   "Summary": "Container Corporation of India Limited engages in handling, transportation, and warehousing activities in India. The company provides inland transport by rail for containers; manages ports and air cargo complexes; develops multimodal logistics support for containerization and trade; and operates logistics facilities, including dry ports, container freight stations, and private freight terminals. It also engages in the cold-chain business for fruits and vegetables; and handling of air cargos and containers. In addition, the company provides LCL hub, air cargo movement, bonded warehousing, facto",
+   "Market_Cap": 389948375040,
+   "PE_Ratio": 31.276724,
+   "Divident_Yield": 1.24
+  },
+  "CROMPTON.NS": {
+   "Name": "Crompton Greaves Consumer Electricals Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Furnishings, Fixtures & Appliances",
+   "Summary": "Crompton Greaves Consumer Electricals Limited manufactures and markets consumer electrical products in India. It operates in two segments, Electrical Consumer Durables and Lighting Products. The company offers fans, such as ceiling, table, wall-mounted, pedestal, ventilating, kitchen tower, exhaust, and industrial fans; and agriculture, industrial monoset, residential, compressor, specialty, and solar pumps. It also provides home appliances, such as air coolers and smart plugs; oil filled, heat convectors, halogen, quartz, and ceramic heaters; personal, tower, window, and desert coolers; stora",
+   "Market_Cap": 173857013760,
+   "PE_Ratio": null,
+   "Divident_Yield": 1.13
+  },
+  "CUMMINSIND.NS": {
+   "Name": "Cummins India Limited",
+   "Sector": "Industrials",
+   "Industry": "Specialty Industrial Machinery",
+   "Summary": "Cummins India Limited engages in the design, manufacture, distribution, and service of engines, generator sets, and related technologies in India, Nepal, and Bhutan. The company operates through two segments, Engines and Lubes. It provides accelera, G-drive, fire pump drive, hydrogen, and natural gas and browse engines; and generators and power systems, including integrated power systems, alternators, transfer switches, generator set controls, system level controls and switchgears, remote monitoring, and browse generators. The company also offers engine components, such as fuel systems, turboc",
+   "Market_Cap": 1497434423296,
+   "PE_Ratio": 63.20346,
+   "Divident_Yield": 1.21
+  },
+  "DABUR.NS": {
+   "Name": "Dabur India Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Household & Personal Products",
+   "Summary": "Dabur India Limited operates as a fast moving consumer goods company worldwide. It operates through Consumer Care Business, Foods Business, Retail Business, and Other segments. The company provides health supplements under the Dabur Chyawanprash, Dabur Honey, and Dabur Glucose brand name; digestive products under the Hajmola, Pudin Hara, Hingoli, Dabur Nature Care, and Sat Isabgol brands; cough and throat products under the Dabur Honitus brand name; baby care products under the Dabur Lal Tail; ayurvedic health juices; rejuvenators under the Dabur Shilajit brand name; Women's Health Tonics; and",
+   "Market_Cap": 729626574848,
+   "PE_Ratio": 37.05405,
+   "Divident_Yield": 1.99
+  },
+  "DIVISLAB.NS": {
+   "Name": "Divi's Laboratories Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Divi's Laboratories Limited engages in the manufacture and sale of generic active pharmaceutical ingredients (APIs), intermediates, and nutraceuticals in India, North America, Asia, Europe, and internationally. The company also undertakes custom synthesis contract manufacturing services of APIs and intermediates; and supplies a range of carotenoids, such as astaxanthin, beta-carotene, lycopene, canthaxanthin, apocarotenal, and vitamins used in the food, beverage, dietary supplement, pet food, and feed industries. It also exports its products. The company was formerly known as Divi's Research C",
+   "Market_Cap": 2216397111296,
+   "PE_Ratio": 86.554016,
+   "Divident_Yield": 0.36
+  },
+  "DLF.NS": {
+   "Name": "DLF Limited",
+   "Sector": "Real Estate",
+   "Industry": "Real Estate - Development",
+   "Summary": "DLF Limited, together with its subsidiaries, engages in the business of colonization and real estate development in India. The company offers real estate development activities, including identification and acquisition of land, and planning, execution, construction, and marketing of projects. The company also develops and sells residential housing projects; and operates and maintains commercial office spaces, including under-construction projects, as well as retail properties, such as malls, shopping complexes, recreational spaces, and hotels and clubs. In addition, the company engages in prov",
+   "Market_Cap": 1589150089216,
+   "PE_Ratio": 35.70634,
+   "Divident_Yield": 1.23
+  },
+  "DRREDDY.NS": {
+   "Name": "Dr. Reddy's Laboratories Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Dr. Reddy's Laboratories Limited, together with its subsidiaries, operates as an integrated pharmaceutical company North America, Europe, India, Russia, and internationally. The company operates through Global Generics, Pharmaceutical Services and Active Ingredients (PSAI), and Others segment. Its Global Generics segment manufactures and markets prescription and over-the-counter finished pharmaceutical products that are marketed under a brand name or as a generic finished dosages with therapeutic equivalence to branded formulations, as well as engages in the biologics business. The PSAI segmen",
+   "Market_Cap": 975443066880,
+   "PE_Ratio": 29.444304,
+   "Divident_Yield": 0.68
+  },
+  "EICHERMOT.NS": {
+   "Name": "Eicher Motors Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Manufacturers",
+   "Summary": "Eicher Motors Limited, an automobile company, engages in the manufacture and sale of motorcycles and commercial vehicles in India and internationally. The company designs, develops, manufactures, assembles, and sells two-wheelers, as well as related parts and accessories; motorcycle accessories; protective and performance gears, and riding apparel products for men and women; and lifestyle apparel products and accessories. It also owns the Royal Enfield motorcycle brand that offers Classic 350, Bullet 350, Meteor 350, Hunter 350, Himalayan 450, Scram 440 ADV Crossover, Interceptor 650, Bear 650",
+   "Market_Cap": 2187251548160,
+   "PE_Ratio": 37.93325,
+   "Divident_Yield": 1.03
+  },
+  "EXIDEIND.NS": {
+   "Name": "Exide Industries Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Parts",
+   "Summary": "Exide Industries Limited designs, manufactures, markets, and sells lead acid batteries and accumulators in India and internationally. It offers automotive, infrastructural, genset, solar, inverter, institutional uninterrupted power supply (UPS), and submarine batteries, as well as home UPS systems, integrated power back-up systems, and e-rickshaw vehicles. The company also manufactures and supplies recycled lead and lead alloys; offers lithium-ion batteries; produces and distributes industrial battery chargers and rectifiers; and provides energy storage solutions, as well as engages in the non",
+   "Market_Cap": 403112493056,
+   "PE_Ratio": 43.23154,
+   "Divident_Yield": 0.43
+  },
+  "FEDERALBNK.NS": {
+   "Name": "The Federal Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "The Federal Bank Limited provides various banking and financial services in India. It operates through four segments: Treasury, Corporate/Wholesale Banking, Retail Banking, and Other Banking Operations segments. The company offers savings, current, salary, GBD super 51, RFC domestic, RFC, EEFC, and gilt accounts, as well as fixed and recurring deposits, and cash certificates; fintech partnership products; and credit card, debit card, smart key chain flash pay, prepaid cards, and tokenization of cards. It also provides personal, gold, car, housing, property, education and career, digital person",
+   "Market_Cap": 872505802752,
+   "PE_Ratio": 18.926659,
+   "Divident_Yield": 0.34
+  },
+  "GAIL.NS": {
+   "Name": "GAIL (India) Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Regulated Gas",
+   "Summary": "GAIL (India) Limited operates as a natural gas processing and distribution company in India and internationally. It operates through Transmission Services, Natural Gas Marketing, Petrochemicals, LPG and Other Liquid Hydrocarbons, and Other segments. The company is involved in the transmission and marketing of natural gas through pipelines to the power, fertilizer, industrial, automotive, petrochemical, domestic, and commercial sectors; exploration and production activities; and marketing of compressed biogas, city gas, and biofuels. It also produces and markets liquefied petroleum gas (LPG), p",
+   "Market_Cap": 1159843938304,
+   "PE_Ratio": 11.74434,
+   "Divident_Yield": 3.11
+  },
+  "GLAND.NS": {
+   "Name": "Gland Pharma Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Gland Pharma Limited engages in manufacturing and sale of injectable formulations in India, the United States, Europe, Canada, Australia, New Zealand, and internationally. It engages in research and development of pharmaceutical active pharmaceutical ingredient products, including synthesis of complex drug molecules, such as low molecular weight heparins, corticosteroids, peptides, and cytotoxic molecules. The company also offers its products for various therapeutic categories, such as anti- diabetic, anti-malarial, anti-infectives, anti-neoplastic, blood related, cardiac, gastro-intestinal, g",
+   "Market_Cap": 430282539008,
+   "PE_Ratio": 41.833202,
+   "Divident_Yield": 0.79
+  },
+  "GODREJCP.NS": {
+   "Name": "Godrej Consumer Products Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Household & Personal Products",
+   "Summary": "Godrej Consumer Products Limited, a fast-moving consumer goods company, manufactures and sells personal care and home care products in India, Africa, Indonesia, the Middle East, the United States, and internationally. The company offers household insecticides, home hygiene, and air and fabric care products; and personal wash and hygiene, hair color, beauty and professional products, and deodorants and fragrances. It provides its products under the Godrej Aer-O, Goodknight Agarbatti, Godrej Ninja, Godrej Good knight, Godrej aer, Godrej Expert, Darling, HIT, Godrej Ezee, Godrej No.1, CINTHOL, Il",
+   "Market_Cap": 1102406483968,
+   "PE_Ratio": 59.29004,
+   "Divident_Yield": 1.87
+  },
+  "GODREJPROP.NS": {
+   "Name": "Godrej Properties Limited",
+   "Sector": "Real Estate",
+   "Industry": "Real Estate - Development",
+   "Summary": "Godrej Properties Limited, together with its subsidiaries, engages primarily in the business of real estate construction, development, hospitality, and other related activities in India. It develops residential and commercial projects. Godrej Properties Limited was incorporated in 1985 and is headquartered in Mumbai, India.",
+   "Market_Cap": 627122307072,
+   "PE_Ratio": 33.85203,
+   "Divident_Yield": 0.48
+  },
+  "GRASIM.NS": {
+   "Name": "Grasim Industries Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Building Materials",
+   "Summary": "Grasim Industries Limited, together with its subsidiaries, primarily produces cellulosic fibres, diversified chemicals, fashion yarns, and fabrics in india and internationally. The company operates through Cellulosic Fibres, Chemicals, Building Materials, Financial Services, and Others segments. It offers cellulosic staple fibre; and cellulosic fashion yarn; chlor-alkali comprising caustic soda; chlorine derivatives; and specialty chemicals, such as epoxy polymers and curing agents. The company also provides grey cement, white cement-based putty, and ready-mix concrete; and decorative paints, ",
+   "Market_Cap": 2183973830656,
+   "PE_Ratio": 44.001095,
+   "Divident_Yield": 0.31
+  },
+  "HAVELLS.NS": {
+   "Name": "Havells India Limited",
+   "Sector": "Industrials",
+   "Industry": "Electrical Equipment & Parts",
+   "Summary": "Havells India Limited, a fast-moving electrical and electronic durables company, manufactures, trades in, and sells various consumer electrical and electronic products in India and internationally. The company operates through six segments: Switchgears, Cables, Lighting and Fixtures, Electrical Consumer Durables, Lloyd Consumer, and Others. It offers switches; switchgears, such as circuit breakers, energy savers, human safety equipment, distribution boards, surge protection devices, and control and monitoring devices, as well as magnetic contractor, thermal overload relays, switchgear, circuit",
+   "Market_Cap": 806730530816,
+   "PE_Ratio": 49.328472,
+   "Divident_Yield": 0.93
+  },
+  "HCLTECH.NS": {
+   "Name": "HCL Technologies Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "HCL Technologies Limited provides IT and business services, engineering, research and development services, software products, and IP-led offerings. It operates through IT and Business Services, Engineering and R&D Services, and HCL Software segments. The company provides application development, management, modernization, and testing services, as well as commercial applications; automation services, including digital integration, business process management, robotic process automation for intelligent automation, and low- and no-code services; digital process operations, such as customer exper",
+   "Market_Cap": 3612198567936,
+   "PE_Ratio": 20.774977,
+   "Divident_Yield": 4.44
+  },
+  "HDFCAMC.NS": {
+   "Name": "HDFC Asset Management Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Asset Management",
+   "Summary": "HDFC Asset Management Company Limited is a publicly owned investment manager. The firm launches and manages equity, fixed income, and balanced mutual funds for its clients. It manages equity, fixed income, balanced, and real estate portfolios. The firm invests in public equity and fixed income markets. The firm employs fundamental analysis to make its investments. HDFC Asset Management Company Limited was founded on December 10,1999 and is based in Mumbai, Maharashtra. HDFC Asset Management Company Limited operates as a subsidiary of HDFC Bank Limited.",
+   "Market_Cap": 1088303792128,
+   "PE_Ratio": 36.96621,
+   "Divident_Yield": 2.11
+  },
+  "HDFCBANK.NS": {
+   "Name": "HDFC Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "HDFC Bank Limited provides banking and financial products and services to individuals and businesses in India, Bahrain, Hong Kong, Singapore, and Dubai. The company operates through Treasury, Retail Banking, Wholesale Banking, Other Banking Business, Insurance Business, and Other segments. It offers savings, salary, current, rural, public provident fund, pension, and demat accounts; fixed and recurring deposits; and safe deposit lockers, as well as offshore accounts and deposits, and overdrafts against fixed deposits. The company also provides personal, home, car and pre owned car, marriage, t",
+   "Market_Cap": 11315028426752,
+   "PE_Ratio": 16.060804,
+   "Divident_Yield": 1.77
+  },
+  "HDFCLIFE.NS": {
+   "Name": "HDFC Life Insurance Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Insurance - Life",
+   "Summary": "HDFC Life Insurance Company Limited engages in the provision of individual and group insurance solutions in India. It offers insurance and investment products, such as protection, pension, savings, investment, annuity, and health, as well as term, investment, life insurance, and NRI plans. The company was formerly known as HDFC Standard Life Insurance Company Limited changed its name to HDFC Life Insurance Company Limited in January 2019. HDFC Life Insurance Company Limited was incorporated in 2000 and is headquartered in Mumbai, India. HDFC Life Insurance Company Limited operates as a subsidi",
+   "Market_Cap": 1178274889728,
+   "PE_Ratio": 59.22489,
+   "Divident_Yield": 0.39
+  },
+  "HEROMOTOCO.NS": {
+   "Name": "Hero MotoCorp Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Manufacturers",
+   "Summary": "Hero MotoCorp Limited primarily engages in the manufacture and sale of motorised two wheelers, spare parts and related services in India, Germany, Asia, Central and Latin America, Africa, and the Middle East. The company offers motorcycles and scooters, as well as electric scooters. It provides engines and accessories, as well as non-banking financial and other related services. The company is also involved in merchandise business. The company was formerly known as Hero Honda Motors Ltd. and changed its name to Hero MotoCorp Limited in July 2011. Hero MotoCorp Limited was incorporated in 1984 ",
+   "Market_Cap": 1110615916544,
+   "PE_Ratio": 19.354557,
+   "Divident_Yield": 3.25
+  },
+  "HINDPETRO.NS": {
+   "Name": "Hindustan Petroleum Corporation Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Refining & Marketing",
+   "Summary": "Hindustan Petroleum Corporation Limited, together with its subsidiaries, engages in the refining and marketing of petroleum products in India and internationally. It operates through Downstream Petroleum and All Other segments. The company offers light distillates, including liquefied petroleum gas, motor spirits, naphtha, hexane, propylene, and solvents; and middle distillates, such as high-speed diesel, superior kerosene oil, light diesel oil, aviation turbine fuels, mineral turpentine oil, jute batching oil, and lube and turbine oil base stocks. It also provides heavy distillates, including",
+   "Market_Cap": 840489893888,
+   "PE_Ratio": 50.25445,
+   "Divident_Yield": 6.14
+  },
+  "HINDUNILVR.NS": {
+   "Name": "Hindustan Unilever Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Household & Personal Products",
+   "Summary": "Hindustan Unilever Limited, a fast-moving consumer goods company, manufactures and sells food, home care, and personal care products in India and internationally. It operates through Home Care, Beauty & Wellbeing, Personal Care, Foods, and Others segments. The company offers detergent bars, detergent powders, detergent liquids, and scourers; skin care and hair care products; skin cleansing, oral care, bodywash, and deodorants; and culinary products, such as tomato based products, fruit based products, soups, etc., as well as tea, coffee, functional nutrition drinks, and lifestyle nutrition pro",
+   "Market_Cap": 4885975138304,
+   "PE_Ratio": 46.17007,
+   "Divident_Yield": 2.11
+  },
+  "HINDZINC.NS": {
+   "Name": "Hindustan Zinc Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Other Industrial Metals & Mining",
+   "Summary": "Hindustan Zinc Limited explores for, extracts, and processes minerals in India, rest of Asia, and internationally. The company operates through two segments, Zinc, Lead, Silver & Others; and Wind Energy. The company produces refined zinc and lead, precious metals, and silver; sulphuric acid; rock-phosphate; and metals and related alloys. It also operates captive thermal with a capacity of 550.00 megawatt, wind power plant with a capacity of 273.50 megawatt, and solar power with capacity of 40.70 megawatt, and waste heat recovery boiler power plants of capacity 63.10 megawatt. In addition, the ",
+   "Market_Cap": 2492938059776,
+   "PE_Ratio": 14.600347,
+   "Divident_Yield": 3.52
+  },
+  "HONAUT.NS": {
+   "Name": "Honeywell Automation India Limited",
+   "Sector": "Industrials",
+   "Industry": "Electrical Equipment & Parts",
+   "Summary": "Honeywell Automation India Limited manufactures and sells industrial process control and automation systems in India and internationally. The company offers environmental and combustion controls, sensing and control solutions, and engineering services. It also provides building solutions, including advanced airfield ground lighting systems, visual docking and guiding systems, Navitas software for airport operations, after-sales services, and maintenance programs. In addition, the company offers building management systems, such as controllers, field devices, and software solutions for healthy ",
+   "Market_Cap": 338986565632,
+   "PE_Ratio": 61.631386,
+   "Divident_Yield": 0.29
+  },
+  "ICICIBANK.NS": {
+   "Name": "ICICI Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "ICICI Bank Limited, together with its subsidiaries, engages in the provision of various banking and financial services to corporate and retail customers in India and internationally. The company operates through Retail Banking, Wholesale Banking, Treasury, Other Banking, Life Insurance, General Insurance, and Others segments. The company offers asset management, securities brokerage, private equity, foreign exchange, agricultural and rural banking, equities underwriting, depositary share accounts, consumer durable goods financing, corporate salary and current account, savings and sovereign gol",
+   "Market_Cap": 10455051403264,
+   "PE_Ratio": 18.835617,
+   "Divident_Yield": 0.83
+  },
+  "ICICIGI.NS": {
+   "Name": "ICICI Lombard General Insurance Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Insurance - Diversified",
+   "Summary": "ICICI Lombard General Insurance Company Limited provides various general insurance products and services in India. The company primarily offers fire, marine, cargo, engineering, aviation, public/product liability, employee group, workmen's compensation, cyber, personal accident, and travel insurance solutions. It also provides credit, crop, cattle, weather, mass health, and motor, as well as home insurance solutions. In addition, the company offers underwriting and claims, customer relationship, technology, operations, finance and accounts, human resources, , actuarial, marketing, business ana",
+   "Market_Cap": 828193243136,
+   "PE_Ratio": 34.305813,
+   "Divident_Yield": 0.83
+  },
+  "ICICIPRULI.NS": {
+   "Name": "ICICI Prudential Life Insurance Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Insurance - Life",
+   "Summary": "ICICI Prudential Life Insurance Company Limited provides life insurance, annuity, pension, and health insurance products to individuals and groups in India. The company offers term, savings, unit linked, guaranteed return, child education, and retirement insurance plans; and pension fund management services. It distributes its products through individual and corporate agents, banks, and brokers, as well as through proprietary sales force (PSF) and online channels. The company was incorporated in 2000 and is based in Mumbai, India. ICICI Prudential Life Insurance Company Limited is a subsidiary",
+   "Market_Cap": 735024513024,
+   "PE_Ratio": 43.631668,
+   "Divident_Yield": 0.32
+  },
+  "IDBI.NS": {
+   "Name": "IDBI Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "IDBI Bank Limited provides banking and financial solutions to retail and corporate customers in India. It operates through four segments: Corporate/Wholesale Banking, Retail Banking, Treasury Operations, and Other banking operations. The company offers savings, current, and salary accounts, as well as fixed deposits; home, auto, education, mortgage, and personal loans, as well as loans against properties and securities; debit, credit, and prepaid cards; mobile and internet banking; and investment advisory and capital market services. It also provides fund and non-fund-based assistance; packing",
+   "Market_Cap": 909008109568,
+   "PE_Ratio": 9.750865,
+   "Divident_Yield": 2.43
+  },
+  "IDEA.NS": {
+   "Name": "Vodafone Idea Limited",
+   "Sector": "Communication Services",
+   "Industry": "Telecom Services",
+   "Summary": "Vodafone Idea Limited, together with its subsidiaries, provides telecommunication services to individuals, communities, and businesses in India. The company offers voice services, such as 4G VoLTE and Voice over WIFI calling; broadband data services on 4G and/or 5G technology; and content and digital products and services, including subscription, digital advertising, gaming, digital marketplace, and utility bill payment app, as well as other value-added services (VAS), caller tunes, missed call alert, and voice and short messaging services; and long distance and internet service provider servi",
+   "Market_Cap": 1368372543488,
+   "PE_Ratio": 3.9345794,
+   "Divident_Yield": null
+  },
+  "IDFCFIRSTB.NS": {
+   "Name": "IDFC First Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "IDFC First Bank Limited provides various banking and financial services in India. It operates through the Treasury, Corporate and Wholesale Banking, Retail Banking, and Other Banking Business segments. The company offers treasury and forex solutions, including correspondent banking, FX, cross-border swift, government bonds and strips, liberalized remittance scheme, and external commercial borrowing solutions, as well as treasury solutions comprising forwards, options, and swaps. It also provides retail lending solutions, such as home loans, vehicle loans, consumer loans, education loans, perso",
+   "Market_Cap": 735821103104,
+   "PE_Ratio": 32.953667,
+   "Divident_Yield": 0.29
+  },
+  "IGL.NS": {
+   "Name": "Indraprastha Gas Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Regulated Gas",
+   "Summary": "Indraprastha Gas Limited distributes and sells natural gas in India. It supplies compressed natural gas (CNG) to the transport sector; and piped natural gas to domestic, industrial, and commercial sectors. The company operates CNG stations, as well as steel pipeline and MDPE networks. It serves households; hotels, restaurants, malls, commercial complexes, educational/religious institutions, and hospitals; and metal, textiles, food and beverages, pharmaceuticals, chemical, auto and ancillary, and packaging industries. The company was incorporated in 1998 and is headquartered in New Delhi, India",
+   "Market_Cap": 216062246912,
+   "PE_Ratio": 13.941283,
+   "Divident_Yield": 3.08
+  },
+  "INDHOTEL.NS": {
+   "Name": "The Indian Hotels Company Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Lodging",
+   "Summary": "The Indian Hotels Company Limited, together with its subsidiaries, owns, operates, and manages hotels, palaces and resorts in India and internationally. It operates through two segments: Hotel Services and Air and Institutional Catering. The company operates hotels under the Taj, Claridges Collection, SeleQtions, Atmanan, Brij, Tajsats, GATEWAY, Vivanta, Ginger, Tree of Life, amã Stays & Trails, Qmin, and Taj Sats brand names. It also provides trails, stays, restaurants, bars, clubs, spas, salons, food and beverages, and boutique services. The Indian Hotels Company Limited was founded in 1868 ",
+   "Market_Cap": 1047646109696,
+   "PE_Ratio": 48.93617,
+   "Divident_Yield": 0.44
+  },
+  "INDIACEM.NS": {
+   "Name": "The India Cements Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Building Materials",
+   "Summary": "The India Cements Limited manufactures and sells cement and cement-related products in India. The company offers grey and white cement, ready mix concrete, and clinkers. It also engages in the generation of power from windmills and thermal power plants; and provision of freight services, including ship hiring and chartering services. The company was incorporated in 1946 and is based in Chennai, India. The India Cements Limited operates as a subsidiary of UltraTech Cement Limited.",
+   "Market_Cap": 182707404800,
+   "PE_Ratio": 131.45485,
+   "Divident_Yield": null
+  },
+  "INDIGO.NS": {
+   "Name": "InterGlobe Aviation Limited",
+   "Sector": "Industrials",
+   "Industry": "Airlines",
+   "Summary": "InterGlobe Aviation Limited, together with its subsidiaries, provides air transportation services under the IndiGo brand in India and internationally. The company offers pre-flight and post-flight ground handling operations; passenger and cargo services; and related allied services, such as in-flight sales, and other allied services at the airports. It also engages in aircraft and aircraft engine leasing, as well as related financial services. In addition, the company provides cargo transport; charter flights; hotel booking services through its website and mobile app; and cadet pilot program f",
+   "Market_Cap": 2056486256640,
+   "PE_Ratio": null,
+   "Divident_Yield": 0.24
+  },
+  "INDUSINDBK.NS": {
+   "Name": "IndusInd Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "IndusInd Bank Limited provides various banking products and financial services to individuals, corporations, government entities, and public sector undertakings in India. It operates in four segments: Treasury, Corporate/Wholesale Banking, Retail Banking, and Other Banking Operations. The company offers savings, salary, RFC, and uniformed personnel accounts; current accounts comprising smart, everyday, premium, trade, startup, and specialized accounts; fixed, recurring, sweep in/out, senior citizen fixed, NRE and NRO fixed, FCNR, and term deposits; vehicle, used and new car, two wheeler, home,",
+   "Market_Cap": 791754702848,
+   "PE_Ratio": 59.706226,
+   "Divident_Yield": 0.15
+  },
+  "INFY.NS": {
+   "Name": "Infosys Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Infosys Limited provides consulting, technology, outsourcing, and digital services worldwide. The company offers insight services, such as applied and generative AI, sustainability services, and Infosys Topaz, an AI-first set of services, solutions, and platforms; blockchain, Internet of Things, and engineering services; cybersecurity and quality engineering services; and enterprise agile DevOps, API economy and microservices, application modernization, and digital process automation. It also provides digital supply chain, Microsoft business application services, Microsoft cloud business, Orac",
+   "Market_Cap": 4718393819136,
+   "PE_Ratio": 15.080906,
+   "Divident_Yield": 4.26
+  },
+  "IOC.NS": {
+   "Name": "Indian Oil Corporation Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Refining & Marketing",
+   "Summary": "Indian Oil Corporation Limited, together with its subsidiaries, engages in the oil, gas, petrochemicals, and alternative energy source businesses in India and internationally. It operates through Sale of Petroleum Products, Sale of Petrochemicals, Sale of Gas, and Other segments. The company is involved in the refining of petroleum products; exploration and production of crude oil and gas; explosives and cryogenic businesses; pipeline transportation of crude oil, petroleum, and gas; petrochemicals and gasoline; gas and LPG marketing; research and development; city gas distribution; and downstr",
+   "Market_Cap": 2014535876608,
+   "PE_Ratio": 5.837152,
+   "Divident_Yield": 5.73
+  },
+  "IPCALAB.NS": {
+   "Name": "Ipca Laboratories Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Ipca Laboratories Limited, an integrated pharmaceutical company, manufactures and markets formulations and active pharmaceutical ingredients (APIs) for various therapeutic segments in India. The company offers APIs in anti-hypertensive, anti-malarial, diuretic, DMARD, and anthelmintic therapeutic areas. It also provides generic and branded formulations in various therapeutic segments, including allergy, anti-neoplastic/cancer drugs, anti-arthritic, anti-epileptic, anti-hypertensive, cardiology, dermatology, diabetes, diabetology, emollients/protectives, fever, gastroenterology, haematology, he",
+   "Market_Cap": 439973838848,
+   "PE_Ratio": 38.529217,
+   "Divident_Yield": 0.34
+  },
+  "IRCTC.NS": {
+   "Name": "Indian Railway Catering & Tourism Corporation Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Travel Services",
+   "Summary": "Indian Railway Catering & Tourism Corporation Limited engages in the provision of catering and hospitality, Internet ticketing, travel and tourism, and packaged drinking water services in India. The company operates through four segments: Catering & Hospitality, Travel & Tourism, Internet Ticketing, and Packaged Drinking Water. It provides mobile catering services for Vande Bharat, Rajdhani, Shatabdi, Duronto, Gatiman, Tejas, and mail/express trains as well as engages in the side vending and e-catering activities; and operates and maintains food plazas, fast food units, food courts, refreshmen",
+   "Market_Cap": 416360005632,
+   "PE_Ratio": 29.910921,
+   "Divident_Yield": 1.86
+  },
+  "ITC.NS": {
+   "Name": "ITC Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Tobacco",
+   "Summary": "ITC Limited engages in the fast-moving consumer goods, paperboards, paper and packaging, and agri businesses in India and internationally. The company offers cigarettes and cigars; foods, including staples, spices, biscuits, confectionery and gums, snacks, noodles and pasta, beverages, dairy products, ready-to-eat meals, chocolates, coffee, and frozen foods; personal care products; education and stationery, such as balls, gels and roller pens, mechanical pencils, geometry boxes, erasers, sharpeners and rulers, wax crayons, plastic crayons, and sketch pens and oil pastels; safety matches; and a",
+   "Market_Cap": 3582174953472,
+   "PE_Ratio": 18.049242,
+   "Divident_Yield": 5.58
+  },
+  "JINDALSTEL.NS": {
+   "Name": "Jindal Steel Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Steel",
+   "Summary": "Jindal Steel Limited operates in the steel, mining, and infrastructure sectors in India and internationally. It offers rails; medium and heavy hot-rolled parallel flange beams and column sections; plates and coils; angles and channels; cold heading quality, electrode quality, and high carbon wire rods; round bars; fabricated sections; Jindal Speedfloor concrete flooring solutions; Jindal Panther TMT rebars; semi-finished products, including slabs, billets, blooms, beam blank, and rounds; and Jindal Panther cement comprising Portland slag cement, Portland composite cement, and ground-granulated",
+   "Market_Cap": 1120254427136,
+   "PE_Ratio": 41.20509,
+   "Divident_Yield": 0.18
+  },
+  "JSWSTEEL.NS": {
+   "Name": "JSW Steel Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Steel",
+   "Summary": "JSW Steel Limited manufactures and sells iron and steel products in India and internationally. The company offers hot and cold rolled steel products, colour coated sheets, galvanized and galvalume steel, electrical steel, steel doors, zinc-magnesium-aluminium products, aluminium-zinc roofing products, tin plate, TMT bars, wire rods, special alloy steel, grinding media, prepainted colour coated steel, low-carbon steel, hot-rolled sheets, structural steel, and low relaxation pre-stressed concrete steel strands under the JSW Neosteel, JSW Neostrands, JSW Neosteel Fastbuild, JSW Trusteel, JSW Colo",
+   "Market_Cap": 3192555307008,
+   "PE_Ratio": 12.904786,
+   "Divident_Yield": 0.53
+  },
+  "JUBLFOOD.NS": {
+   "Name": "Jubilant FoodWorks Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Restaurants",
+   "Summary": "Jubilant FoodWorks Limited, together with its subsidiaries, engages in food service business in India, Turkey, Bangladesh, Sri Lanka, Azerbaijan, Nepal, and Georgia. The company operates quick service restaurants under the Domino's, Dunkin', Popeyes, Hong's Kitchen, and COFFY brands. It also engages in wholesale and retail sale of food items. The company was formerly known as Domino's Pizza India Ltd. and changed its name to Jubilant FoodWorks Limited in September 2009. Jubilant FoodWorks Limited was incorporated in 1995 and is headquartered in Noida, India.",
+   "Market_Cap": 311080058880,
+   "PE_Ratio": 83.128296,
+   "Divident_Yield": 0.25
+  },
+  "KOTAKBANK.NS": {
+   "Name": "Kotak Mahindra Bank Limited",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Kotak Mahindra Bank Limited provides a range of banking and financial services to corporate and individual customers in India. It operates through Corporate/Wholesale Banking; Retail Banking; Treasury, BMU, and Corporate Centre; Vehicle Financing; Other Lending Activities; Advisory and Transactional Services; Asset Management; and Insurance segments. The company offers savings, current, retail institution, corporate, private banking, and salary accounts; debit and credit card; NRE and NRO fixed deposits and foreign currency nonresident deposits; home, personal, business, payday, gold, educatio",
+   "Market_Cap": 3918907310080,
+   "PE_Ratio": 19.313726,
+   "Divident_Yield": 0.16
+  },
+  "LICHSGFIN.NS": {
+   "Name": "LIC Housing Finance Limited",
+   "Sector": "Financial Services",
+   "Industry": "Mortgage Finance",
+   "Summary": "LIC Housing Finance Limited, a housing finance company, provides loans for the purchase, construction, repair, and renovation of houses/buildings in India. The company offers public, green, and corporate deposits; home loans to residents and non-residents Indians, as well as to pensioners; plot loans, home improvement and renovation, construction, and home extension loans; refinance; construction finance and term loans for builders and developers; and loans for staff quarters and other lines of credit for corporates. It also provides loans against properties for companies and individuals; loan",
+   "Market_Cap": 277781807104,
+   "PE_Ratio": 4.841802,
+   "Divident_Yield": 1.95
+  },
+  "LT.NS": {
+   "Name": "Larsen & Toubro Limited",
+   "Sector": "Industrials",
+   "Industry": "Engineering & Construction",
+   "Summary": "Larsen & Toubro Limited engages in engineering, procurement, and construction projects (EPC) in India and internationally. The company operates through four segments: Infrastructure Projects, Energy Projects, Hi-Tech Manufacturing, and Others. The Infrastructure Projects segment is involved in the engineering and construction of building and factories, transportation infrastructure, heavy civil infrastructure, power transmission & distribution, renewables, water and effluent treatment, and minerals and metals. The Energy Projects segment provides EPC solutions in clean energy space, oil & gas,",
+   "Market_Cap": 5588493271040,
+   "PE_Ratio": 33.710682,
+   "Divident_Yield": 0.94
+  },
+  "LUPIN.NS": {
+   "Name": "Lupin Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Lupin Limited, together with its subsidiaries, operates as a pharmaceutical company in India, the United States, and internationally. The company operates in two segments: Pharmaceuticals and Others. It produces, develops, and markets various branded and generic formulations, biotechnology products, and active pharmaceutical ingredients (APIs). The company also offers products in the therapeutic areas of cardiovascular, diabetology, asthama, pediatrics, central nervous system, gastro-intestinal, anti-infectives, anti-TB, cephalosporins, and nonsteroidal anti-inflammatory drug therapies. In add",
+   "Market_Cap": 1090505211904,
+   "PE_Ratio": 20.466833,
+   "Divident_Yield": 0.75
+  },
+  "M&M.NS": {
+   "Name": "Mahindra & Mahindra Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Manufacturers",
+   "Summary": "Mahindra & Mahindra Limited provides mobility products and farm solutions in India and internationally. It operates through Automotive; Farm Equipment; Auto Investments; Farm Investments; and Investments in Industrial Businesses and Consumer Services segments. The Automotive segment provides automobiles, two wheelers, spares, construction equipment and related services. The Farm Equipment segment sells tractors, implements, spares, powerol, and related services. The Auto Investments segment invests in automotive-related subsidiaries, associates and joint ventures. The Farm Investments segment ",
+   "Market_Cap": 4089796100096,
+   "PE_Ratio": 20.707685,
+   "Divident_Yield": 0.96
+  },
+  "M&MFIN.NS": {
+   "Name": "Mahindra & Mahindra Financial Services Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Mahindra & Mahindra Financial Services Limited, a non-banking financial company, engages in vehicle financing business in India. The company operates through Financing Activities and Other Reconciling Items segments. It offers financing for new and pre-owned auto, utility vehicles, tractors, passenger cars, and commercial vehicles; and vehicle leasing solutions through its digital platform Quiklyz to fleet operators, farmers, businesses, self-employed, and salaried individuals. The company also provides loan against property, equipment finance, working capital finance, and supply chain finance",
+   "Market_Cap": 540270133248,
+   "PE_Ratio": 16.565828,
+   "Divident_Yield": 1.88
+  },
+  "MANAPPURAM.NS": {
+   "Name": "Manappuram Finance Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Manappuram Finance Limited, a gold loan non-banking financial company, provides fund-based and fee-based financial services in India. It operates through Gold Loan and Others, and Microfinance segments. The company offers loans, such as gold loans, gold loans at your doorstep, online gold loans, business loans, home improvement loans, housing loans, property loans, income-generating loans, and personal loans; balance transfers and top-ups; and co-lending arrangements. It also finances commercial and passenger vehicles, construction and farm equipment, and two-wheelers, as well as micro, small,",
+   "Market_Cap": 341918351360,
+   "PE_Ratio": 30.795263,
+   "Divident_Yield": 0.55
+  },
+  "MARUTI.NS": {
+   "Name": "Maruti Suzuki India Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Manufacturers",
+   "Summary": "Maruti Suzuki India Limited manufactures, purchases, and sells motor vehicles, components, and spare parts in India. The company offers passenger vehicles, utility vehicles, and multi-purpose vehicles. It is also involved in the facilitation of pre-owned car sales, fleet management, and car financing activities. In addition, the company offers driving school, insurance, accessories, and financing products and services. It also exports its products to South Africa, Saudi Arabia, Chile, Japan, Mexico, and internationally. The company was formerly known as Maruti Udyog Limited and changed its nam",
+   "Market_Cap": 4426787979264,
+   "PE_Ratio": 30.911087,
+   "Divident_Yield": 0.99
+  },
+  "METROPOLIS.NS": {
+   "Name": "Metropolis Healthcare Limited",
+   "Sector": "Healthcare",
+   "Industry": "Diagnostics & Research",
+   "Summary": "Metropolis Healthcare Limited, together with its subsidiaries, provides pathology and related healthcare services in India and internationally. The company offers routine and specialised pathology tests; advanced diagnostics, including genetic, molecular, and cytogenetic testing; preventive healthcare packages and corporate wellness screening; clinical trial research, hospital lab management, and home collection services; radiology services, including X-ray, sonography and ECG; and next-generation sequencing services. It also provides diagnostic services for oncology, chronic and infectious di",
+   "Market_Cap": 117091016704,
+   "PE_Ratio": 57.90769,
+   "Divident_Yield": 0.34
+  },
+  "MOTHERSON.NS": {
+   "Name": "Samvardhana Motherson International Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Parts",
+   "Summary": "Samvardhana Motherson International Limited, together with its subsidiaries, manufactures and sells components to automotive original equipment manufacturers in India, Germany, the United States, and internationally. It operates through Wiring Harness, Modules and Polymer Products, Vision Systems, Integrated Assemblies, and Emerging Businesses segments. The company offers wiring harness components, power modules, electrical cabinets and power packs, and electrical distribution systems; and exterior and interior rearview mirrors, and camera monitoring systems. It also provides plastic parts and",
+   "Market_Cap": 1632340803584,
+   "PE_Ratio": 42.349728,
+   "Divident_Yield": 0.32
+  },
+  "MPHASIS.NS": {
+   "Name": "Mphasis Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Mphasis Limited, together with its subsidiaries, operates as an information technology solutions provider that specializes in cloud and cognitive services in the United States, India, Europe, the Middle East, Africa, and internationally. The company operates through Banking and Financial Services; Logistics and Transportation; Technology Media and Telecom; Insurance; and Others segments. The company offers application, blockchain, business process, cognitive, cyber security, DevOps, AI, digital, enterprise automation, experience design, infrastructure, modernization, data, IT operations, produ",
+   "Market_Cap": 462139817984,
+   "PE_Ratio": 24.202057,
+   "Divident_Yield": 2.52
+  },
+  "MRF.NS": {
+   "Name": "MRF Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Parts",
+   "Summary": "MRF Limited, together with its subsidiaries, engages in the manufacture and sale of rubber products in India and internationally. The company provides tires for passenger cars, two wheelers, farms, trucks, OTR, SCV, LCV, pick up, three-wheeler, MCV, ICV, tubes, and flap products; tread rubber product; and manufactures specialty coatings. It is also involved in the paints and coats, sports goods, pretreads, and motorsports businesses; and heavy-duty truck/bus tyres, light truck, MUV/RCV/passenger cars, farm services, military services, fork-lift, off the road/earth movers, and MRF commercial ty",
+   "Market_Cap": 568016306176,
+   "PE_Ratio": 23.391232,
+   "Divident_Yield": 0.35
+  },
+  "NAM-INDIA.NS": {
+   "Name": "Nippon Life India Asset Management Limited",
+   "Sector": "Financial Services",
+   "Industry": "Asset Management",
+   "Summary": "Nippon Life Asset Management Limited is a publicly owned investment manager. The firm launches and manages equity and fixed income mutual funds for its clients. It also manages exchange traded funds for its clients. The firm invests in the public equity, fixed income and commodity markets. Nippon Life Asset Management Limited was previously known as Reliance Nippon Life Asset Management Limited. Nippon Life Asset Management Limited was founded on February 24, 1995 and is based in Mumbai, India. Nippon Life India Asset Management Limited operates as a subsidiary of Nippon Life Insurance Company",
+   "Market_Cap": 767155044352,
+   "PE_Ratio": 47.487137,
+   "Divident_Yield": 1.77
+  },
+  "NAUKRI.NS": {
+   "Name": "Info Edge (India) Limited",
+   "Sector": "Communication Services",
+   "Industry": "Internet Content & Information",
+   "Summary": "Info Edge (India) Limited operates as an online classifieds company in the areas of recruitment, matrimony, real estate, and education and related services in India and internationally. It operates through Recruitment Solutions, 99acres for Real Estate, and Other segments. The company provides recruitment services through Naukri.com, an online job website for job seekers and corporate customers, including hiring consultants/firms; Naukrigulf.com, a website catering to Gulf markets; Quadranglesearch.com, a site that provides off-line placement services to middle and senior management; zwayam.co",
+   "Market_Cap": 803194601472,
+   "PE_Ratio": 55.45617,
+   "Divident_Yield": 1.16
+  },
+  "NAVINFLUOR.NS": {
+   "Name": "Navin Fluorine International Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Chemicals",
+   "Summary": "Navin Fluorine International Limited manufactures and sells specialty fluorochemicals in India and internationally. The company offers refrigerants for various applications, including window and split room air conditioners, chillers, packaged air conditioners, commercial and industrial refrigeration units, intermediate for active pharmaceutical ingredients, fluoropolymer resins, domestic and industrial refrigerators, and mobile air conditioning under the Mafron brand for original equipment manufacturers, service technicians, and equipment owners. It also provides inorganic fluoride products, s",
+   "Market_Cap": 443745173504,
+   "PE_Ratio": 66.477104,
+   "Divident_Yield": 0.2
+  },
+  "NESTLEIND.NS": {
+   "Name": "Nestlé India Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Packaged Foods",
+   "Summary": "Nestlé India Limited engages in the manufacture and sale of food products in India and internationally. It offers milk products and nutrition, including dairy whitener, condensed milk, UHT milk, yogurt, maternal and infant formula, baby foods, health care nutrition; prepared dishes and cooking aids, such as noodles, sauces, seasonings, pasta, cereals, and pet foods; powdered and liquid beverages comprising instant coffee and tea, as well as ready to drink beverages; and confectionery items consisting of bar countlines, tablets, and sugar confectionery products. The company was incorporated in ",
+   "Market_Cap": 2959962537984,
+   "PE_Ratio": 77.68218,
+   "Divident_Yield": 0.79
+  },
+  "NHPC.NS": {
+   "Name": "NHPC Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Renewable",
+   "Summary": "NHPC Limited, together with its subsidiaries, engages in the generation, sale, and trading of electricity through hydro, wind, and solar power stations in India and Nepal. It also owns and operates power stations. In addition, the company offers consultancy, project execution, and maintenance services in the areas of design and engineering; geotechnical investigations; renovation and modernization of hydropower projects; procurement; project management and supervision; construction management; and operation and maintenance of power plants, rural road projects, and rural electrification project",
+   "Market_Cap": 778490150912,
+   "PE_Ratio": 27.97834,
+   "Divident_Yield": 2.05
+  },
+  "NMDC.NS": {
+   "Name": "NMDC Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Steel",
+   "Summary": "NMDC Limited, together with its subsidiaries, explores for and produces iron ore in India and internationally. It operates through Iron Ore, and All Other Segments (Pellets, Other Minerals & Services). The company also explores for lithium, copper, rock phosphate, limestone, beach sand, coking and non-coking coal, magnesite, diamond, tungsten, nickel, gold, base metals, and rare earth metals. In addition, it produces and sells hot rolled coil and pellets; and generates and distributes solar and wind power. The company exports its products. NMDC Limited was incorporated in 1958 and is headquart",
+   "Market_Cap": 757854633984,
+   "PE_Ratio": 10.177095,
+   "Divident_Yield": 4.08
+  },
+  "NTPC.NS": {
+   "Name": "NTPC Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Regulated Electric",
+   "Summary": "NTPC Limited operates as an integrated power company in India and Mauritius. It operates through two segments: Generation and Others. The company generates power from fossil fuels, hydro, solar, wind, nuclear, and renewable energy sources. It also engages in the coal mining and energy trading business. NTPC Limited was incorporated in 1975 and is based in New Delhi, India.",
+   "Market_Cap": 3345349869568,
+   "PE_Ratio": 10.544009,
+   "Divident_Yield": 3.53
+  },
+  "ONGC.NS": {
+   "Name": "Oil and Natural Gas Corporation Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Integrated",
+   "Summary": "Oil and Natural Gas Corporation Limited, together with its subsidiaries, engages in the exploration, development, production, and distribution of crude oil, natural gas, and value-added products in India and internationally. It operates through Exploration and Production, Refining & Marketing, and Petrochemicals segments. The company engages in the refining and marketing of petroleum products; liquefied natural gas supply; pipelines for transportation of petroleum products; SEZ development; helicopter services; and production of ethanol, sugar, petrochemicals, liquefied petroleum gas, naphtha,",
+   "Market_Cap": 2991590473728,
+   "PE_Ratio": 7.219187,
+   "Divident_Yield": 7.7
+  },
+  "PAGEIND.NS": {
+   "Name": "Page Industries Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Apparel Manufacturing",
+   "Summary": "Page Industries Limited manufactures, markets, and distributes textile garments and clothing accessories for men, women, and kids in India and internationally. The company offers vests, briefs, boxer briefs, trunks, inner boxers, tank tops, t-shirts, polos, oversized T-shirts, knit shirts, henleys, sweatshirts, jackets, hoodies, windcheater, boxer shorts, shorts, bermudas, joggers, track pants, pyjamas, pants, pants, bras, panties, crop tops, camisoles, kurta slips, shrugs, sleep dresses, skirts, shorts, capris, culottes, leggings, shapewears, sets, caps, handkerchief, and masks; face, hand, b",
+   "Market_Cap": 446712643584,
+   "PE_Ratio": 58.37852,
+   "Divident_Yield": 1.49
+  },
+  "PETRONET.NS": {
+   "Name": "Petronet LNG Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Refining & Marketing",
+   "Summary": "Petronet LNG Limited engages in the import, storage, regasification, and supply of liquefied natural gas (LNG) in India. It owns and operates an LNG import and regasification terminal with name plate capacity of 17.5 MMTPA located in Dahej, Gujarat; and an LNG terminal with name plate capacity of 5 MMTPA located in Kochi, Kerala. The company serves private entities, key infrastructure entities, petrochemical entities, city gas distribution entities, refineries, fertilizer and power generating entities, and other industrial entities. Petronet LNG Limited was incorporated in 1998 and is based in",
+   "Market_Cap": 415425069056,
+   "PE_Ratio": 10.780459,
+   "Divident_Yield": 3.56
+  },
+  "PFC.NS": {
+   "Name": "Power Finance Corporation Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Power Finance Corporation Limited, a non-banking finance company, provides financial products and related advisory services to the power, logistics, and infrastructure sectors in India. The company offers fund-based financial policies and products, such as project-specific funding; a revamped distribution sector scheme; funding for clearance of dues-LPS; a revolving bill payment facility; guidelines for solar and wind power generation projects, as well as for funding private sector independent transmission projects (ITP); a debt refinancing policy; a prepayment policy for solar wind ITP and ot",
+   "Market_Cap": 1379442491392,
+   "PE_Ratio": 5.3248405,
+   "Divident_Yield": 3.78
+  },
+  "PFIZER.NS": {
+   "Name": "Pfizer Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - General",
+   "Summary": "Pfizer Limited engages in manufacturing, marketing, trading, and distribution of pharmaceutical products in India and internationally. It offers therapy area and products, such as vaccines, injectables and anti-infectives, inflammation and immunology, and internal medicine for cardiovascular care, oncology, respiratory, multivitamins and multimineral, neuroscience, women's health, gastroenterology, pain management, and nutrition, addressing. The company also offers anti-infectives services to hospitals and nursing homes. It sells its products through a network of independent distributors. Pfiz",
+   "Market_Cap": 224163889152,
+   "PE_Ratio": 30.531496,
+   "Divident_Yield": 1.53
+  },
+  "PIIND.NS": {
+   "Name": "PI Industries Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Agricultural Inputs",
+   "Summary": "PI Industries Limited, together with its subsidiaries, manufactures and distributes of agricultural chemicals in India, rest of Asia, North America, Europe, and internationally. It operates through Agro Chemicals and Pharma segments. The company offers agrochemicals, including insecticides, fungicides, herbicides, and biologicals; crop solutions for soybeans, chili, sugarcane, rice, wheat, cotton, and corn, as well as horticulture products; and plant nutrients and specialty chemicals. It also provides custom synthesis and manufacturing services to other companies; and pharmaceuticals, medicina",
+   "Market_Cap": 424170389504,
+   "PE_Ratio": 32.097347,
+   "Divident_Yield": 0.53
+  },
+  "PNB.NS": {
+   "Name": "Punjab National Bank",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "Punjab National Bank provides various banking and financial products and services in India and internationally. The company operates through Treasury, Corporate/Wholesale Banking, Retail Banking, and Other Banking Operations segments. The company offers personal banking products and services, including saving fund accounts, current accounts, fixed deposit, and capital gain account and gold monetization schemes; and housing, vehicle, education, personal, gold, and mortgage and other loans. It also provides various micro, small, and medium enterprises schemes and loans; banking products for gove",
+   "Market_Cap": 1313643429888,
+   "PE_Ratio": 5.946931,
+   "Divident_Yield": 2.64
+  },
+  "POLYCAB.NS": {
+   "Name": "Polycab India Limited",
+   "Sector": "Industrials",
+   "Industry": "Electrical Equipment & Parts",
+   "Summary": "Polycab India Limited manufactures and sells wires and cables under the POLYCAB brand in India and internationally. The company operates through three segments: Wires and Cables; Fast Moving Electrical Goods (FMEG); and Engineering, Procurement and Construction (EPC). The Wires and Cables segment provides wires, such as PolycabSuprema house wires, PolycabMaxima+ Green wire, PolycabPrimma house wires, ETIRA house wires, PolycabOptima+, GREENWIRE 180m, and POLYCAB LF FR 180m; and cables, such as control, rubber, defense, special, fire protection, marine offshore/onshore, domestic appliance and l",
+   "Market_Cap": 1403165605888,
+   "PE_Ratio": 48.913044,
+   "Divident_Yield": 0.51
+  },
+  "POWERGRID.NS": {
+   "Name": "Power Grid Corporation of India Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Regulated Electric",
+   "Summary": "Power Grid Corporation of India Limited, an electric power transmission utility, engages in the power transmission business in India and internationally. It operates in three segments: Transmission Services, Telecom Services, and Consultancy Services. As of 31 March 2025, the company owned and operated 180,195 circuit kilometers of transmission lines, and 282 substations with an aggregate transformation capacity of 551,961 mega volt amperes. It also provides telecom services that offer overhead optic fiber network services using optical ground wire on power transmission lines under the POWERTE",
+   "Market_Cap": 2518138486784,
+   "PE_Ratio": 13.4567585,
+   "Divident_Yield": 4.27
+  },
+  "RAJESHEXPO.NS": {
+   "Name": "Rajesh Exports Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Luxury Goods",
+   "Summary": "Rajesh Exports Limited, a gold refiner, engages in the manufacture, wholesale, and retail of gold and various gold products in India. It also owns retail showrooms under the SHUBH Jewellers brand. The company also exports its products. Rajesh Exports Limited was incorporated in 1989 and is headquartered in Bengaluru, India.",
+   "Market_Cap": 24961277952,
+   "PE_Ratio": 22.188976,
+   "Divident_Yield": null
+  },
+  "RECLTD.NS": {
+   "Name": "REC Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "REC Limited, together with its subsidiaries, engages in the provision of financing services for power generation, transmission, distribution, infrastructure, and logistics projects in India. The company primarily offers long, medium, and short-terms loans; debt refinancing, equity financing, financing of equipment manufacturing for power sector and coal mines; policy for funding against regulatory assets, and revolving bill payment facility services; and letter of undertaking in lieu of bank guarantee, etc. It is also involved in the implementation of distribution system strengthening works, i",
+   "Market_Cap": 951910465536,
+   "PE_Ratio": 5.948659,
+   "Divident_Yield": 1.69
+  },
+  "RELIANCE.NS": {
+   "Name": "Reliance Industries Limited",
+   "Sector": "Energy",
+   "Industry": "Oil & Gas Refining & Marketing",
+   "Summary": "Reliance Industries Limited engages in hydrocarbon exploration and production, petroleum refining and marketing, petrochemicals, advanced materials and composites, renewable, financial services, retail, and digital services worldwide. It operates through the Oil to Chemicals, Oil and Gas, Retail, Digital Services, and Others segments. The company is involved in refining and marketing products, including liquefied petroleum gas, propylene, naphtha, gasoline, jet/aviation turbine fuel, kerosine oil, diesel, sulfur, and petroleum coke. It also provides polymers comprising high-density and low-den",
+   "Market_Cap": 17930525868032,
+   "PE_Ratio": 23.973223,
+   "Divident_Yield": 0.47
+  },
+  "SBICARD.NS": {
+   "Name": "SBI Cards and Payment Services Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "SBI Cards and Payment Services Limited, a non-banking financial company, provides credit cards to individual and corporate customers in India. The company offers corporate, central travel, utility, and corporate purchase and virtual cards. It also acts as a corporate insurance agent for selling insurance policies to credit card customers. The company was incorporated in 1998 and is headquartered in Gurugram, India. SBI Cards and Payment Services Limited operates as a subsidiary of State Bank of India.",
+   "Market_Cap": 628084047872,
+   "PE_Ratio": 27.615063,
+   "Divident_Yield": 0.38
+  },
+  "SBILIFE.NS": {
+   "Name": "SBI Life Insurance Company Limited",
+   "Sector": "Financial Services",
+   "Industry": "Insurance - Life",
+   "Summary": "SBI Life Insurance Company Limited operates as a life insurance company in India. The company's life insurance business comprises individual and group life insurance products, including participating, non-participating, pension, group gratuity, group leave encashment, group superannuation, group annuity, unit-linked and variable insurance products, health, and micro insurance. It also provides accident and disability benefits, level terms, and critical illness insurance products. In addition, the company offers online life insurance, money back income, terms, protection, savings, child plan, w",
+   "Market_Cap": 1867570479104,
+   "PE_Ratio": 71.76176,
+   "Divident_Yield": 0.14
+  },
+  "SBIN.NS": {
+   "Name": "State Bank of India",
+   "Sector": "Financial Services",
+   "Industry": "Banks - Regional",
+   "Summary": "State Bank of India provides banking products and services in India and internationally. The company operates through the Treasury, Corporate/Wholesale Banking, Retail Banking, and Other Banking Business segments. It offers personal banking products and services, including current, savings, salary, and deposit accounts; home, personal, pension, auto, education, and gold loans, as well as loans against insurance property, and securities; debit, business debit, prepaid, and green remit cards; overdrafts; mutual funds, insurance, equity trading, portfolio investment schemes, remittance services; ",
+   "Market_Cap": 10015219908608,
+   "PE_Ratio": 11.903456,
+   "Divident_Yield": 1.64
+  },
+  "SHREECEM.NS": {
+   "Name": "Shree Cement Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Building Materials",
+   "Summary": "Shree Cement Limited engages in the manufacture and sale of cement and clinker in India and internationally. The company provides ordinary Portland, Portland pozzolana, Portland slag, and composite cements. It also produces ready mix concrete, as well as aerated autoclaved concrete blocks, a lightweight and precast building material. The company offers its products under the Bangur brand name. In addition, it engages in the generation of power with a total capacity of 1,137 megawatts through thermal renewable, waste heat recovery, solar, and wind power plants. Shree Cement Limited was incorpor",
+   "Market_Cap": 946939232256,
+   "PE_Ratio": 58.074436,
+   "Divident_Yield": 0.52
+  },
+  "SIEMENS.NS": {
+   "Name": "Siemens Limited",
+   "Sector": "Industrials",
+   "Industry": "Specialty Industrial Machinery",
+   "Summary": "Siemens Limited, a technology company, industry, infrastructure, mobility, and healthcare business in India and internationally. It operates through Smart Infrastructure, Mobility, Digital Industries, and Others segments. The Smart Infrastructure supplies products, systems, solutions, and services for transmission and distribution of electrical energy for power utilities, industrial companies, and infrastructure segments. This segment offers systems for low and medium voltage distribution; solutions for smart grids and energy automation; and low voltage power supply systems, as well as intelli",
+   "Market_Cap": 1407388221440,
+   "PE_Ratio": 83.445946,
+   "Divident_Yield": 0.45
+  },
+  "SRF.NS": {
+   "Name": "SRF Limited",
+   "Sector": "Industrials",
+   "Industry": "Conglomerates",
+   "Summary": "SRF Limited manufactures, purchases, and sells technical textiles, chemicals, packaging films, and other polymers. It operates through Technical Textiles Business, Chemicals Business, Performance Films and Foil Business, and Others segments. The company offers polyester and nylon tyre cord, belting, coated, and laminated fabrics; and polyester industrial yarns. It also provides fluorochemicals, such as refrigerant gases, industrial and specialty chemicals, fluorochemicals, and allied products, as well as research and development services. In addition, the company offers polyester films and pol",
+   "Market_Cap": 778036117504,
+   "PE_Ratio": 36.026627,
+   "Divident_Yield": 0.38
+  },
+  "SUMICHEM.NS": {
+   "Name": "Sumitomo Chemical India Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Agricultural Inputs",
+   "Summary": "Sumitomo Chemical India Limited engages in the manufacture and sale of household and public health insecticides, agricultural pesticides, and animal nutrition products in India and internationally. It also offers crop protection products, such as insecticides, herbicides, fungicides, and miticides; household pesticides; animal nutrition; plant nutrition and plant growth regulators; fumigants and rodenticides; and biological products. The company was incorporated in 2000 and is headquartered in Mumbai, India. Sumitomo Chemical India Limited is a subsidiary of Sumitomo Chemical Company Limited.",
+   "Market_Cap": 262151340032,
+   "PE_Ratio": 45.197937,
+   "Divident_Yield": 0.26
+  },
+  "SUNDARMFIN.NS": {
+   "Name": "Sundaram Finance Limited",
+   "Sector": "Financial Services",
+   "Industry": "Credit Services",
+   "Summary": "Sundaram Finance Limited, together with its subsidiaries, operates as a non-banking finance company in India. The company accepts fixed, cumulative, and NRI deposits. The company also offers finance for new and used cars, new and used commercial vehicles, and new and used construction equipment; diesel finance for commercial vehicle operators and companies; tire and insurance finance; farm equipment finance for new/used tractors, harvesters, and farm implements; SME finance working capital, enterprise business, and machinery term loans, as well as channel finance; housing finance; and leasing ",
+   "Market_Cap": 512225116160,
+   "PE_Ratio": 24.869696,
+   "Divident_Yield": 0.84
+  },
+  "SUNPHARMA.NS": {
+   "Name": "Sun Pharmaceutical Industries Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Sun Pharmaceutical Industries Limited, a generic pharmaceutical company, develops, manufactures, and markets branded and generic formulations, and active pharmaceutical ingredients (APIs) in India, the United States, and internationally. The company offers formulations in various therapeutic areas, including neuropsychiatry, cardiology, diabetes, gastroenterology, pain/analgesics, gynecology, ophthalmology, urology, dermatology, respiratory, anti-infectives, oncology, psychiatry, neurology, orthopaedic, nephrology, dental, and nutritionals. It also provides generic medications, such as tablets",
+   "Market_Cap": 4681102262272,
+   "PE_Ratio": 38.67962,
+   "Divident_Yield": 0.82
+  },
+  "SUNTV.NS": {
+   "Name": "Sun TV Network Limited",
+   "Sector": "Communication Services",
+   "Industry": "Broadcasting",
+   "Summary": "Sun TV Network Limited, together with its subsidiaries, engages in producing and broadcasting satellite television and radio software programming in the regional languages. Its flagship channel is Sun TV. The company also operates various other satellite channels, such as Surya TV, Gemini TV, Udaya TV, SUN Bangla, and Sun Marathi; 24 frequency modulation radio stations; SunRisers Hyderabad, an Indian Premier League franchise; Sun Risers Eastern Cape, a South Africa Premier League franchise; and SUNNXT, an OTT platform. In addition, it offers daily newspapers and magazines. The company provides",
+   "Market_Cap": 192786202624,
+   "PE_Ratio": 13.380744,
+   "Divident_Yield": 1.01
+  },
+  "SUPREMEIND.NS": {
+   "Name": "The Supreme Industries Limited",
+   "Sector": "Industrials",
+   "Industry": "Building Products & Equipment",
+   "Summary": "The Supreme Industries Limited manufactures and sells plastic products in India. The company offers plastic piping systems, including uPVC pipes, injection-molded PVC and handmade fittings; polypropylene random co-polymer pipe systems; HDPE and CPVC pipe systems; inspection chambers; manholes; bath fittings and sanitaryware; roto-molded tanks and fittings; solvents; industrial piping systems; DWC pipe system; PERT pipe system; O-PVC pipe system; and fire sprinkler systems. It also provides industrial products, such as industrial components, material handling system and pallets, roto moulded cr",
+   "Market_Cap": 441863405568,
+   "PE_Ratio": 42.82547,
+   "Divident_Yield": 1.04
+  },
+  "SYNGENE.NS": {
+   "Name": "Syngene International Limited",
+   "Sector": "Healthcare",
+   "Industry": "Diagnostics & Research",
+   "Summary": "Syngene International Limited, a contract research and manufacturing company, provides drug discovery and development services in India, the United States of America, Europe, and internationally. The company provides discovery chemistry services, such as synthetic and medicinal chemistry, library and peptide synthesis, biomolecular science, organic electronic materials, and computational and analytical chemistry; discovery biology services in the areas of recombinant DNA engineering, cell line development, hybridoma technology, sequencing, protein sciences, screening and assay biology, DMPK, i",
+   "Market_Cap": 160900644864,
+   "PE_Ratio": 72.81421,
+   "Divident_Yield": 0.31
+  },
+  "TATACONSUM.NS": {
+   "Name": "Tata Consumer Products Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Packaged Foods",
+   "Summary": "Tata Consumer Products Limited, together with its subsidiaries, manufactures, distributes, and trades in food products in India, the United States, the United Kingdom, and internationally. It operates through Branded Business and Non Branded Business segments. The company provides tea, coffee, water, salt, pulses, spices, snacks, ready-to-eat packaged and processed food products, ready to cook, ready to drink beverages, breakfast cereals, sauces, instant masala noodles, meal solutions, staples, mini-meals, breakfast, chilli ginger garlic paste, cooking aids and condiments, dry fruits, floor an",
+   "Market_Cap": 1078762078208,
+   "PE_Ratio": 65.86103,
+   "Divident_Yield": 0.91
+  },
+  "TATAELXSI.NS": {
+   "Name": "Tata Elxsi Limited",
+   "Sector": "Technology",
+   "Industry": "Software - Application",
+   "Summary": "Tata Elxsi Limited provides product design and engineering, systems integration, and support services in India, the United States, Europe, and Internationally. The company operates through two segments, Systems Integration and Support, and Software Development and Services. It offers iCX, a SaaS-based solution for automating, monitoring, and managing CPEs; and AIVA, an AI-based video analytics platform that automates video tagging, object detection, content indexing, and metadata generation. It also provides QoEtient, a platform for video streaming services; TEPlay, an OTT/IPTV platform; Neuro",
+   "Market_Cap": 231442857984,
+   "PE_Ratio": 35.384323,
+   "Divident_Yield": 2.0
+  },
+  "TATAPOWER.NS": {
+   "Name": "The Tata Power Company Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Independent Power Producers",
+   "Summary": "The Tata Power Company Limited engages in the generation, transmission, distribution, and trading of electricity in India and internationally. It operates through four segments: Thermal & Hydro, Transmission & Distribution, Renewables, and Others. The company generates power from hydroelectric and thermal sources, such as coal, gas, and oil; and provides related ancillary services. It also engages in the operation of transmission and distribution networks; and sale of power to retail customers through distribution networks. In addition, the company offers project management contracts and infra",
+   "Market_Cap": 1209755500544,
+   "PE_Ratio": 31.083744,
+   "Divident_Yield": 0.65
+  },
+  "TCS.NS": {
+   "Name": "Tata Consultancy Services Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Tata Consultancy Services Limited provides information technology (IT) and IT enabled services. It offers TCS ADD, a suite of AI powered life sciences platforms; TCS BaNCS, a financial services platform; TCS BFSI Platforms, a cloud-native, subscription-based as-a-service digital ecosystem for insurers and financial firms; TCS Chroma, a cloud-based AI-led hire-to-retire modular platform; TCS Customer Intelligence & Insights, an AI-powered, real-time customer data analytics solution; TCS ERP on Cloud, SAP transformation with AI-powered smart solutions; ignio, a cognitive automation software prod",
+   "Market_Cap": 8585721413632,
+   "PE_Ratio": 17.253164,
+   "Divident_Yield": 2.69
+  },
+  "TECHM.NS": {
+   "Name": "Tech Mahindra Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Tech Mahindra Limited provides information technology services and solutions in India, the Americas, Europe, and internationally. The company offers TechM AppGinieZ, a software development lifecycle acceleration platform; Swifter.io, a software engineering platform; ADMSNXT Reforge, an application modernization platform; Autonomous Operations Center, an AI-powered operations platform; and New Age Delivery Platform for DevSecOps and engineering. It also provides LitmusT, a quality engineering and intelligent testing platform; TechM Orion, an agentic AI platform; Ops amplifAler 4.0 for IT operat",
+   "Market_Cap": 1445882888192,
+   "PE_Ratio": 28.263203,
+   "Divident_Yield": 3.09
+  },
+  "TITAN.NS": {
+   "Name": "Titan Company Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Luxury Goods",
+   "Summary": "Titan Company Limited, together with its subsidiaries, manufactures and sells watches, jewelry, eyewear, fragrances, women's bags, and other accessories and products in India and internationally. The company operates through four segments: Watches and Wearables, Jewellery, Eyecare, and Others. The company designs, manufactures, and retails watches and wearables under the Nebula, Titan, Titan Clock, Zoop, Titan Octane, Titan Raga, Xylys, Edge, Fastrack, Sonata, Titan Smart, Fastrack smart, SF, Titan World, and Helios brands; jewellery products under the Mia, CaratLane, Tanishq, and Zoya brands;",
+   "Market_Cap": 4433452204032,
+   "PE_Ratio": 87.71499,
+   "Divident_Yield": 0.31
+  },
+  "TORNTPHARM.NS": {
+   "Name": "Torrent Pharmaceuticals Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Torrent Pharmaceuticals Limited engages in the research, development, manufacturing, marketing, and distribution of branded and generic pharmaceutical formulations in India, the United States, Brazil, Germany, Malta, and internationally. The company offers products in various therapeutic areas, including anti-diabetic, anti-microbial, cardiovascular, CNS, urology, gynecology, oncology, gastro-intestinal, nephrology, neuro-psychiatric, dermatology, pulmonology, pediatric treatments, nutritional, pain management, anti-infective, and miscellaneous, as well as vitamins, minerals, and nutrients. It",
+   "Market_Cap": 1885103194112,
+   "PE_Ratio": 79.296,
+   "Divident_Yield": 0.76
+  },
+  "TORNTPOWER.NS": {
+   "Name": "Torrent Power Limited",
+   "Sector": "Utilities",
+   "Industry": "Utilities - Independent Power Producers",
+   "Summary": "Torrent Power Limited, together with its subsidiaries, engages in the generation, renewables, and transmission and distribution of electricity in India. The company owns thermal power plants with a generation capacity of 6,092 megawatts; renewable with a generation capacity of 5,952 megawatts peak; pumped storage project (PSP) develops 3,000 megawatts / 18,000 megawatt-hour PSP project; explores and evaluates various opportunities for supply of green hydrogen and green ammonia; and operates 952 ckm 400 kV and 388 ckm of 220 kV transmission line projects, including Khavda and Solapur projects. ",
+   "Market_Cap": 667772977152,
+   "PE_Ratio": 28.771166,
+   "Divident_Yield": 1.51
+  },
+  "TRENT.NS": {
+   "Name": "Trent Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Apparel Retail",
+   "Summary": "Trent Limited engages in the retailing and trading of apparels, footwear, accessories, food, grocery, and non-food products in India. The company provides apparel, footwear, and accessories for men, women, and children, as well as furnishings, decor, and a range of home accessories under the Westside brand; apparels and footwear for men, women, and children under the Zudio brand; apparel, footwear, innerwear, beauty, and accessories for women under the Utsa brand; and luxurious, differentiated, and elevated occasion wear for men and women under the Samoh brand. It also operates Star Hypermarke",
+   "Market_Cap": 1656806047744,
+   "PE_Ratio": 96.40398,
+   "Divident_Yield": 0.13
+  },
+  "TVSMOTOR.NS": {
+   "Name": "TVS Motor Company Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Auto Manufacturers",
+   "Summary": "TVS Motor Company Limited, together with its subsidiaries, engages in the manufacture and sale of automotive vehicles and components, spare parts, and accessories in India and internationally. The company operates through Automotive Vehicles & Parts and Related Investments; and Investment Held in Financial Services segments. The company offers motorcycles under the Apache RTR, Apache RR, Ronin, Raider, Radeon, StaR City+, HLX, and Sport brand names; scooters under the Jupiter, Neo, Ntorq, and Zest brands; electric vehicles under the TVS X, Orbiter, and iQUBE brands; mopeds under the XL 100 bra",
+   "Market_Cap": 2079114788864,
+   "PE_Ratio": 60.78077,
+   "Divident_Yield": 0.27
+  },
+  "UBL.NS": {
+   "Name": "United Breweries Limited",
+   "Sector": "Consumer Defensive",
+   "Industry": "Beverages - Brewers",
+   "Summary": "United Breweries Limited engages in manufacture, purchase, and sale of beer and non-alcoholic beverages in India and internationally. The company offers beer products under the Heineken Original, Heineken Silver, Kingfisher Premium, Kingfisher Strong, Kingfisher Ultra, Kingfisher Ultra Max, Kingfisher Ultra Witbier, Amstel Bier, Amstel Grande, Bullet, Bullet Super Strong, Cannon 10000, Zingaro, Kingfisher Storm, Kingfisher Blue, Kingfisher Flavour Mango and lemon, Kalyani Black Label, UB Export Lager, UB Export Strong, London Pilsner Premium, London Pilsner Premium Strong, and Queenfisher bran",
+   "Market_Cap": 374212624384,
+   "PE_Ratio": 90.550224,
+   "Divident_Yield": 0.71
+  },
+  "ULTRACEMCO.NS": {
+   "Name": "UltraTech Cement Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Building Materials",
+   "Summary": "UltraTech Cement Limited, together with its subsidiaries, engages in the manufacturing, marketing, and distribution of building materials in India and internationally. It offers grey cement, including ordinary Portland, composite, and weather plus, as well as Portland pozzolana, pozzolana super, and slag cement; white cement, wall care putty, and value-added products; and ready-mix concrete. The company also provides tile adhesives, gouts, cleaners, and fixing accessories; waterproof coatings, preformed membranes, and repair and integral waterproofing solutions; and ready-mix plasters and indu",
+   "Market_Cap": 3552098385920,
+   "PE_Ratio": 41.566265,
+   "Divident_Yield": 1.97
+  },
+  "VEDL.NS": {
+   "Name": "Vedanta Limited",
+   "Sector": "Basic Materials",
+   "Industry": "Other Industrial Metals & Mining",
+   "Summary": "Vedanta Limited, a diversified natural resources company, explores, extracts, and processes minerals, and oil and gas in India, Europe, China, the United States, Mexico, and internationally. The company explores, produces, and sells oil and gas, zinc, lead, silver, copper, aluminum, iron ores, and metallurgical coke. It also operates a thermal coal-based commercial power facility of 600 megawatts (MW) at Jharsuguda in Odisha; a 1,200 MW thermal coal-based power plants in the Chhattisgarh; 1,980 MW thermal coal- based commercial power facilities in Punjab; wind power plants; and a 1,000 MW coal",
+   "Market_Cap": 1073820467200,
+   "PE_Ratio": 12.077294,
+   "Divident_Yield": 12.27
+  },
+  "WHIRLPOOL.NS": {
+   "Name": "Whirlpool of India Limited",
+   "Sector": "Consumer Cyclical",
+   "Industry": "Furnishings, Fixtures & Appliances",
+   "Summary": "Whirlpool of India Limited manufactures and markets home appliances in India and internationally. It offers refrigerators, washing machines, air conditioners, microwave ovens, kitchen, built-in, and small appliances as well as dishwasher. The company sells its products through Internet. The company was incorporated in 1960 and is headquartered in Gurugram, India. Whirlpool of India Limited operates as a subsidiary of Whirlpool Corporation.",
+   "Market_Cap": 105400999936,
+   "PE_Ratio": 35.919117,
+   "Divident_Yield": 0.62
+  },
+  "WIPRO.NS": {
+   "Name": "Wipro Limited",
+   "Sector": "Technology",
+   "Industry": "Information Technology Services",
+   "Summary": "Wipro Limited operates as an information technology (IT), consulting, and business process services company worldwide. It operates through IT Services and IT Products segments. The IT Services segment offers AI-powered IT and IT-enabled services, including digital strategy advisory, customer-centric design, technology and IT consulting, custom application design, development, re-engineering and maintenance, systems integration, package implementation, cloud and infrastructure, business process, cloud, mobility and analytics, research and development, and hardware and software design services t",
+   "Market_Cap": 1841164320768,
+   "PE_Ratio": 14.794912,
+   "Divident_Yield": 4.28
+  },
+  "ZYDUSLIFE.NS": {
+   "Name": "Zydus Lifesciences Limited",
+   "Sector": "Healthcare",
+   "Industry": "Drug Manufacturers - Specialty & Generic",
+   "Summary": "Zydus Lifesciences Limited engages in the research, development, production, marketing, distribution, and sale of pharmaceutical products in India, the United States, Europe, and internationally. It operates through three segments: Pharmaceuticals, Consumer Products, and Medical Technologies. The company offers active pharmaceutical ingredients, human and finished dosage formulations, generics, branded generics, specialty formulations, biosimilars, vaccines, novel therapeutics, medical devices and technologies, consumer wellness, veterinary, and animal health products. It also provides biologi",
+   "Market_Cap": 1105234231296,
+   "PE_Ratio": 22.111355,
+   "Divident_Yield": 0.09
+  }
+ }
+}

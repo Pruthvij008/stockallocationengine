@@ -284,7 +284,7 @@ const Performance = () => {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-customBlack-100 text-xs uppercase tracking-wide text-slate-200">
+                    <tr className="iv-band text-xs uppercase tracking-wide text-slate-200">
                       {COLUMNS.map((col) => {
                         const activeSort = sort.key === col.key;
                         return (
